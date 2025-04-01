@@ -171,13 +171,13 @@ const getFarmIcon = (farmType: string) => {
     microgreens: '#10b981', // emerald
     restaurant: '#ef4444' // red for restaurant
   };
-  
+
   let color = '#10b981'; // default color
-  
+
   if (farmType in colors) {
     color = colors[farmType as keyof typeof colors];
   }
-  
+
   return divIcon({
     className: '',
     iconSize: iconSize,
@@ -229,7 +229,7 @@ const restaurantIcon = divIcon({
 // Component to fly to selected farm
 const FlyToMarker: React.FC<{position: LatLngTuple, farmId: number | null}> = ({ position, farmId }) => {
   const map = useMap();
-  
+
   useEffect(() => {
     if (farmId !== null) {
       map.flyTo(position, 12, {
@@ -241,7 +241,7 @@ const FlyToMarker: React.FC<{position: LatLngTuple, farmId: number | null}> = ({
       });
     }
   }, [map, position, farmId]);
-  
+
   return null;
 };
 
@@ -251,18 +251,18 @@ const WeatherDisplay: React.FC<{farmLocation: LatLngTuple}> = ({ farmLocation })
   const getWeatherData = () => {
     const lat = farmLocation[0];
     const lon = farmLocation[1];
-    
+
     // Generate "random" but consistent weather based on coordinates
     const seed = (lat * 10 + lon * 10) % 10;
-    
+
     const conditions = [
       "Sunny", "Partly Cloudy", "Cloudy", "Light Rain", "Clear"
     ];
-    
+
     const temperatures = [68, 72, 74, 70, 76];
-    
+
     const index = Math.abs(Math.floor(seed)) % conditions.length;
-    
+
     return {
       condition: conditions[index],
       temperature: temperatures[index],
@@ -270,9 +270,9 @@ const WeatherDisplay: React.FC<{farmLocation: LatLngTuple}> = ({ farmLocation })
       humidity: 45 + index * 5,
     };
   };
-  
+
   const weather = getWeatherData();
-  
+
   return (
     <div className="bg-blue-50 p-2 rounded-md text-xs mb-2">
       <div className="flex justify-between items-center">
@@ -290,7 +290,7 @@ const WeatherDisplay: React.FC<{farmLocation: LatLngTuple}> = ({ farmLocation })
 // Seasonal prediction component
 const SeasonalForecast: React.FC<{ingredients: Ingredient[]}> = ({ ingredients }) => {
   const currentMonth = new Date().getMonth();
-  
+
   // Season determination
   const getSeason = (month: number) => {
     if (month >= 2 && month <= 4) return "Spring";
@@ -298,22 +298,22 @@ const SeasonalForecast: React.FC<{ingredients: Ingredient[]}> = ({ ingredients }
     if (month >= 8 && month <= 10) return "Fall";
     return "Winter";
   };
-  
+
   const currentSeason = getSeason(currentMonth);
   const nextSeason = getSeason((currentMonth + 3) % 12);
-  
+
   const inSeasonIngredients = ingredients.filter(ing => 
     ing.seasonality.includes(currentSeason) || ing.seasonality.includes("Year-round")
   );
-  
+
   const upcomingIngredients = ingredients.filter(ing => 
     ing.seasonality.includes(nextSeason) && !ing.seasonality.includes(currentSeason) && !ing.seasonality.includes("Year-round")
   );
-  
+
   return (
     <div className="border border-primary-light p-3 rounded-lg mt-4 bg-primary-light bg-opacity-5">
       <h5 className="font-semibold text-primary-dark text-sm mb-2">Seasonal Availability Forecast</h5>
-      
+
       <div className="mb-3">
         <span className="text-xs font-medium text-primary">Currently In Season:</span>
         <div className="flex flex-wrap gap-1 mt-1">
@@ -328,7 +328,7 @@ const SeasonalForecast: React.FC<{ingredients: Ingredient[]}> = ({ ingredients }
           )}
         </div>
       </div>
-      
+
       <div>
         <span className="text-xs font-medium text-secondary">Coming Next Season:</span>
         <div className="flex flex-wrap gap-1 mt-1">
@@ -352,11 +352,11 @@ const SustainabilityCalculator: React.FC<{farm: Farm}> = ({ farm }) => {
   const milesAvoided = 2000 - farm.distance; // Compared to average food miles
   const carbonSavings = (100 - farm.carbonFootprint) * 0.5; // CO2 in kg
   const waterSavings = farm.sustainabilityScore * 5; // Water in gallons
-  
+
   return (
     <div className="mt-4 p-3 bg-emerald-50 rounded-lg border border-emerald-200">
       <h5 className="font-semibold text-emerald-700 text-sm mb-2">Sustainability Impact</h5>
-      
+
       <div className="space-y-3">
         <div>
           <div className="flex justify-between text-xs text-emerald-700 mb-1">
@@ -370,7 +370,7 @@ const SustainabilityCalculator: React.FC<{farm: Farm}> = ({ farm }) => {
             ></div>
           </div>
         </div>
-        
+
         <div>
           <div className="flex justify-between text-xs text-emerald-700 mb-1">
             <span>Carbon Reduction</span>
@@ -383,7 +383,7 @@ const SustainabilityCalculator: React.FC<{farm: Farm}> = ({ farm }) => {
             ></div>
           </div>
         </div>
-        
+
         <div>
           <div className="flex justify-between text-xs text-emerald-700 mb-1">
             <span>Water Conservation</span>
@@ -397,7 +397,7 @@ const SustainabilityCalculator: React.FC<{farm: Farm}> = ({ farm }) => {
           </div>
         </div>
       </div>
-      
+
       <div className="mt-3 text-center">
         <span className="text-xs text-emerald-600">By choosing ingredients from {farm.name}, each dish saves approximately {(milesAvoided * 0.01 + carbonSavings * 0.1).toFixed(1)} kg of carbon emissions.</span>
       </div>
@@ -452,23 +452,23 @@ const CookingTutorialPreview: React.FC<{ingredient: Ingredient}> = ({ ingredient
       steps: ["Toast bread", "Mash avocado on toast", "Top with microgreens and flaky salt"]
     }
   };
-  
+
   const recipe = recipes[ingredient.id as keyof typeof recipes];
-  
+
   return (
     <div className="mt-4 p-3 bg-primary-light bg-opacity-5 rounded-lg border border-primary border-opacity-20">
       <div className="flex justify-between items-center mb-2">
         <h5 className="font-semibold text-primary-dark text-sm">Cooking Tutorial</h5>
         <span className="text-xs bg-primary text-white px-2 py-0.5 rounded-full">AR Ready</span>
       </div>
-      
+
       <div className="text-sm text-primary-dark font-medium">{recipe.name}</div>
-      
+
       <div className="flex justify-between mt-1 mb-2">
         <span className="text-xs text-neutral-dark">{recipe.difficulty}</span>
         <span className="text-xs text-neutral-dark">Prep: {recipe.prepTime} | Cook: {recipe.cookTime}</span>
       </div>
-      
+
       <div className="space-y-1">
         {recipe.steps.map((step, index) => (
           <div key={index} className="flex items-start text-xs">
@@ -479,7 +479,7 @@ const CookingTutorialPreview: React.FC<{ingredient: Ingredient}> = ({ ingredient
           </div>
         ))}
       </div>
-      
+
       <button className="mt-3 w-full text-xs bg-primary text-white rounded-full py-1.5 hover:bg-primary-dark transition-colors">
         Launch AR Cooking Tutorial
       </button>
@@ -494,7 +494,7 @@ const IngredientMap: React.FC = () => {
   const [mapLoaded, setMapLoaded] = useState(false);
   const [activeView, setActiveView] = useState<'map' | 'satellite'>('map'); // Default to map view
   const [showConnections, setShowConnections] = useState(true); // Default to showing supply routes
-  
+
   useEffect(() => {
     // Fix Leaflet's icon path issues 
     delete (Icon.Default.prototype as any)._getIconUrl;
@@ -503,20 +503,20 @@ const IngredientMap: React.FC = () => {
       iconUrl,
       shadowUrl,
     });
-    
+
     // Set map as loaded after a delay to ensure CSS is applied
     const timer = setTimeout(() => {
       setMapLoaded(true);
     }, 500);
-    
+
     return () => clearTimeout(timer);
   }, []);
-  
+
   const handleFarmSelect = (farm: Farm) => {
     setSelectedFarm(farm);
     setSelectedIngredient(null);
   };
-  
+
   const handleIngredientSelect = (ingredient: Ingredient) => {
     setSelectedIngredient(ingredient);
     const relatedFarm = farms.find(farm => farm.id === ingredient.farmId);
@@ -524,16 +524,16 @@ const IngredientMap: React.FC = () => {
       setSelectedFarm(relatedFarm);
     }
   };
-  
+
   const getIngredientsForFarm = (farmId: number) => {
     return ingredients.filter(i => i.farmId === farmId);
   };
-  
+
   const resetSelection = () => {
     setSelectedFarm(null);
     setSelectedIngredient(null);
   };
-  
+
   // Calculate connections between restaurant and farms
   const getConnectionLines = () => {
     return farms.map(farm => ({
@@ -545,7 +545,7 @@ const IngredientMap: React.FC = () => {
       dashArray: farm.id === selectedFarm?.id ? '' : '5, 10',
     }));
   };
-  
+
   return (
     <section id="ingredient-map" className="py-16 md:py-24 bg-primary bg-opacity-5">
       <div className="container mx-auto px-4">
@@ -560,7 +560,7 @@ const IngredientMap: React.FC = () => {
           <div className="w-24 h-1 bg-accent mx-auto mb-6"></div>
           <p className="text-neutral-dark max-w-2xl mx-auto">Discover where every ingredient in our dishes comes from - all sourced within 50 miles of our kitchen</p>
         </motion.div>
-        
+
         <div className="flex flex-wrap gap-2 mb-6 justify-center">
           <button 
             onClick={() => setActiveView('map')}
@@ -591,7 +591,7 @@ const IngredientMap: React.FC = () => {
             </button>
           )}
         </div>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
             {mapLoaded && (
@@ -606,7 +606,7 @@ const IngredientMap: React.FC = () => {
                   ) : (
                     <FlyToMarker position={restaurantLocation} farmId={null} />
                   )}
-                  
+
                   <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url={activeView === 'map' 
@@ -614,7 +614,7 @@ const IngredientMap: React.FC = () => {
                       : "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
                     }
                   />
-                  
+
                   {/* Supply chain connections */}
                   {showConnections && getConnectionLines().map((line, index) => (
                     <Polyline
@@ -628,7 +628,7 @@ const IngredientMap: React.FC = () => {
                       }}
                     />
                   ))}
-                  
+
                   {/* Restaurant Marker */}
                   <Marker position={restaurantLocation} icon={restaurantIcon}>
                     <Popup>
@@ -638,7 +638,7 @@ const IngredientMap: React.FC = () => {
                       </div>
                     </Popup>
                   </Marker>
-                  
+
                   {/* Farm Markers */}
                   {farms.map(farm => (
                     <React.Fragment key={farm.id}>
@@ -671,7 +671,7 @@ const IngredientMap: React.FC = () => {
                           </div>
                         </Popup>
                       </Marker>
-                      
+
                       {/* Sustainability radius indicators */}
                       <Circle 
                         center={farm.location}
@@ -689,7 +689,7 @@ const IngredientMap: React.FC = () => {
                 </MapContainer>
               </div>
             )}
-            
+
             {/* Map legend */}
             <div className="mt-3 p-3 bg-white rounded-lg shadow-sm">
               <h4 className="text-sm font-semibold text-primary-dark mb-2">Map Legend</h4>
@@ -721,7 +721,7 @@ const IngredientMap: React.FC = () => {
               </div>
             </div>
           </div>
-          
+
           <div className="bg-white p-6 rounded-lg shadow-lg max-h-[650px] overflow-auto">
             {selectedFarm ? (
               <div>
@@ -732,11 +732,11 @@ const IngredientMap: React.FC = () => {
                 >
                   <div className="flex justify-between items-start">
                     <h3 className="font-heading text-xl text-primary-dark">{selectedFarm.name}</h3>
-                    <span className="bg-accent text-white text-xs px-2 py-1 rounded-full">
+                    <span className="bg-accent text-white text-xs px-2 py1 py-1 rounded-full">
                       {selectedFarm.distance} miles
                     </span>
                   </div>
-                  
+
                   <div className="flex items-center mt-2 mb-4">
                     <div className="w-full bg-gray-200 rounded-full h-2.5">
                       <div 
@@ -747,18 +747,18 @@ const IngredientMap: React.FC = () => {
                     <span className="ml-2 text-sm text-primary font-bold">{selectedFarm.sustainabilityScore}</span>
                     <span className="ml-1 text-xs text-neutral-dark">/100</span>
                   </div>
-                  
+
                   <p className="text-neutral-dark text-sm mb-2">{selectedFarm.description}</p>
-                  
+
                   {/* Weather information */}
                   <WeatherDisplay farmLocation={selectedFarm.location} />
-                  
+
                   {/* Seasonal forecast */}
                   <SeasonalForecast ingredients={getIngredientsForFarm(selectedFarm.id)} />
-                  
+
                   {/* Sustainability impact calculator */}
                   <SustainabilityCalculator farm={selectedFarm} />
-                  
+
                   <h4 className="font-heading text-lg text-primary-dark mt-6 mb-3">Sourced Ingredients</h4>
                   <div className="grid grid-cols-1 gap-4">
                     <AnimatePresence>
@@ -806,7 +806,7 @@ const IngredientMap: React.FC = () => {
                     </AnimatePresence>
                   </div>
                 </motion.div>
-                
+
                 {selectedIngredient && (
                   <motion.div 
                     className="mt-6 p-4 bg-primary bg-opacity-5 rounded-lg"
@@ -823,7 +823,7 @@ const IngredientMap: React.FC = () => {
                         {selectedIngredient.seasonality.join(', ')}
                       </div>
                     </div>
-                    
+
                     {/* Cooking tutorial component */}
                     <CookingTutorialPreview ingredient={selectedIngredient} />
                   </motion.div>
@@ -838,7 +838,7 @@ const IngredientMap: React.FC = () => {
                 </div>
                 <h3 className="font-heading text-xl text-primary-dark mb-2">Explore Our Sources</h3>
                 <p className="text-neutral-dark mb-4">Click on any farm marker on the map to learn more about our ingredients and sourcing practices.</p>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full mt-4">
                   <div className="bg-primary bg-opacity-5 p-4 rounded-lg">
                     <h4 className="font-semibold text-primary-dark text-sm mb-2">Farm-to-Table Stats</h4>
@@ -861,7 +861,7 @@ const IngredientMap: React.FC = () => {
                       </li>
                     </ul>
                   </div>
-                  
+
                   <div className="bg-secondary bg-opacity-5 p-4 rounded-lg">
                     <h4 className="font-semibold text-secondary-dark text-sm mb-2">Environmental Impact</h4>
                     <ul className="space-y-2 text-sm">
@@ -884,7 +884,7 @@ const IngredientMap: React.FC = () => {
             )}
           </div>
         </div>
-        
+
         <div className="mt-10 bg-white p-6 rounded-lg shadow-lg">
           <h3 className="font-heading text-xl text-primary-dark mb-4">Our Sourcing Philosophy</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -898,7 +898,7 @@ const IngredientMap: React.FC = () => {
               <h4 className="font-heading text-lg text-primary-dark mb-2">Local First</h4>
               <p className="text-neutral-dark text-sm">We source 90% of our ingredients from within 50 miles of our restaurant, reducing food miles and supporting our local farming community.</p>
             </div>
-            
+
             <div className="p-4 border border-primary border-opacity-20 rounded-lg bg-primary bg-opacity-5">
               <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-3">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -908,7 +908,7 @@ const IngredientMap: React.FC = () => {
               <h4 className="font-heading text-lg text-primary-dark mb-2">Sustainable Practices</h4>
               <p className="text-neutral-dark text-sm">We partner exclusively with farms using regenerative agriculture practices, organic methods, and responsible resource management.</p>
             </div>
-            
+
             <div className="p-4 border border-primary border-opacity-20 rounded-lg bg-primary bg-opacity-5">
               <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-3">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">

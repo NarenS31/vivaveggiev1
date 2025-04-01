@@ -46,7 +46,7 @@ app.use((req, res, next) => {
     } catch (dbError) {
       console.warn("Database setup had issues, continuing anyway:", dbError);
     }
-    
+
     const server = await registerRoutes(app);
 
     app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
