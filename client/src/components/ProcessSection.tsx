@@ -86,9 +86,11 @@ const ProcessSection: React.FC = () => {
                     {/* Outer glowing ring */}
                     <div className="absolute inset-0 rounded-full bg-primary opacity-30 blur-md animate-ping-slow"></div>
                     
-                    {/* Inner content */}
+                    {/* Inner content with better centering for all numbers */}
                     <div className="absolute inset-0 rounded-full bg-primary flex items-center justify-center">
-                      <span className="relative z-20">{stepNumber}</span>
+                      <span className="relative z-20 flex items-center justify-center w-full h-full text-center" style={{ lineHeight: 1 }}>
+                        {stepNumber}
+                      </span>
                     </div>
                   </motion.div>
                 </div>

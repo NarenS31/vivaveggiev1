@@ -3,6 +3,7 @@ import { queryClient } from "./lib/queryClient";
 import { Switch, Route } from "wouter";
 import Home from "./pages/Home";
 import NotFound from "./pages/not-found";
+import { GameProvider } from "./components/GameElements";
 
 function Router() {
   return (
@@ -16,7 +17,9 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <Router />
+      <GameProvider>
+        <Router />
+      </GameProvider>
     </QueryClientProvider>
   );
 }

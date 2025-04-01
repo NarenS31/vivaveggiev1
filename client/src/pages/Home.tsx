@@ -11,6 +11,10 @@ import OrderForm from "../components/OrderForm";
 import TestimonialsSection from "../components/TestimonialsSection";
 import Footer from "../components/Footer";
 import IngredientMap from "../components/IngredientMap";
+import VirtualTour from "../components/VirtualTour";
+import DynamicMenu from "../components/DynamicMenu";
+import OriginStory from "../components/OriginStory";
+import { LoyaltyProgramCard } from "../components/GameElements";
 
 const Home: React.FC = () => {
   // References for scroll navigation
@@ -21,6 +25,10 @@ const Home: React.FC = () => {
   const menuRef = useRef<HTMLDivElement>(null);
   const preorderRef = useRef<HTMLDivElement>(null);
   const ingredientMapRef = useRef<HTMLDivElement>(null);
+  const virtualTourRef = useRef<HTMLDivElement>(null);
+  const dynamicMenuRef = useRef<HTMLDivElement>(null);
+  const originStoryRef = useRef<HTMLDivElement>(null);
+  const loyaltyProgramRef = useRef<HTMLDivElement>(null);
 
   // Active tab state for menu navigation
   const [activeTab, setActiveTab] = useState("menu");
@@ -41,6 +49,23 @@ const Home: React.FC = () => {
   const handleIngredientMapClick = () => {
     scrollToSection(ingredientMapRef);
   };
+  
+  // Handlers for new features navigation
+  const handleVirtualTourClick = () => {
+    scrollToSection(virtualTourRef);
+  };
+  
+  const handleDynamicMenuClick = () => {
+    scrollToSection(dynamicMenuRef);
+  };
+  
+  const handleOriginStoryClick = () => {
+    scrollToSection(originStoryRef);
+  };
+  
+  const handleLoyaltyProgramClick = () => {
+    scrollToSection(loyaltyProgramRef);
+  };
 
   return (
     <div className="font-body bg-pattern min-h-screen">
@@ -53,6 +78,10 @@ const Home: React.FC = () => {
           menu: handleMenuClick,
           preorder: () => scrollToSection(preorderRef),
           ingredientMap: handleIngredientMapClick,
+          virtualTour: handleVirtualTourClick,
+          dynamicMenu: handleDynamicMenuClick,
+          originStory: handleOriginStoryClick,
+          loyaltyProgram: handleLoyaltyProgramClick,
         }} 
       />
       
@@ -136,6 +165,54 @@ const Home: React.FC = () => {
           transition={{ duration: 0.5 }}
         >
           <TestimonialsSection />
+        </motion.div>
+
+        <motion.div
+          ref={virtualTourRef}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <VirtualTour />
+        </motion.div>
+
+        <motion.div
+          ref={dynamicMenuRef}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <DynamicMenu />
+        </motion.div>
+        
+        <motion.div
+          ref={originStoryRef}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <OriginStory />
+        </motion.div>
+        
+        <motion.div
+          ref={loyaltyProgramRef}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="container mx-auto px-4 py-16 md:py-24"
+        >
+          <div className="text-center mb-16">
+            <h2 className="text-primary font-heading text-4xl md:text-5xl font-bold mb-4">Sustainability Rewards</h2>
+            <div className="w-24 h-1 bg-accent mx-auto mb-6"></div>
+            <p className="text-neutral-dark max-w-2xl mx-auto">
+              Join our loyalty program and earn rewards while supporting sustainable dining practices
+            </p>
+          </div>
+          <LoyaltyProgramCard />
         </motion.div>
       </main>
       

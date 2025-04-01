@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="600px" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sky -->
+  <rect x="0" y="0" width="800" height="350" fill="#a8ddfd" />
+  
+  <!-- Sun -->
+  <circle cx="650" cy="100" r="60" fill="#ffd54f" />
+  <circle cx="650" cy="100" r="50" fill="#ffeb3b" />
+  
+  <!-- Clouds -->
+  <g opacity="0.9">
+    <ellipse cx="200" cy="120" rx="60" ry="30" fill="#ffffff" />
+    <ellipse cx="250" cy="100" rx="70" ry="40" fill="#ffffff" />
+    <ellipse cx="180" cy="100" rx="50" ry="30" fill="#ffffff" />
+  </g>
+  
+  <g opacity="0.7">
+    <ellipse cx="500" cy="150" rx="50" ry="25" fill="#ffffff" />
+    <ellipse cx="540" cy="130" rx="60" ry="30" fill="#ffffff" />
+    <ellipse cx="480" cy="130" rx="40" ry="20" fill="#ffffff" />
+  </g>
+  
+  <g opacity="0.8">
+    <ellipse cx="100" cy="80" rx="40" ry="20" fill="#ffffff" />
+    <ellipse cx="130" cy="70" rx="50" ry="25" fill="#ffffff" />
+    <ellipse cx="80" cy="70" rx="30" ry="15" fill="#ffffff" />
+  </g>
+  
+  <!-- Ground -->
+  <rect x="0" y="350" width="800" height="250" fill="#689f38" />
+  
+  <!-- Garden Beds -->
+  <g transform="translate(100, 450)">
+    <!-- Bed 1 -->
+    <rect x="-80" y="-50" width="160" height="100" rx="5" fill="#5d4037" />
+    <rect x="-70" y="-40" width="140" height="80" fill="#795548" />
+    
+    <!-- Vegetables in Bed 1 -->
+    <g transform="translate(-50, -20)">
+      <!-- Lettuce -->
+      <circle cx="0" cy="0" r="15" fill="#7cb342" />
+      <path d="M -10,-5 Q 0,-15 10,-5 T 15,10 T 0,15 T -15,10 T -10,-5" fill="#8bc34a" />
+      <path d="M -5,-3 Q 0,-10 5,-3 T 8,5 T 0,8 T -8,5 T -5,-3" fill="#9ccc65" />
+    </g>
+    
+    <g transform="translate(0, 0)">
+      <!-- Lettuce -->
+      <circle cx="0" cy="0" r="15" fill="#7cb342" />
+      <path d="M -10,-5 Q 0,-15 10,-5 T 15,10 T 0,15 T -15,10 T -10,-5" fill="#8bc34a" />
+      <path d="M -5,-3 Q 0,-10 5,-3 T 8,5 T 0,8 T -8,5 T -5,-3" fill="#9ccc65" />
+    </g>
+    
+    <g transform="translate(50, -10)">
+      <!-- Lettuce -->
+      <circle cx="0" cy="0" r="15" fill="#7cb342" />
+      <path d="M -10,-5 Q 0,-15 10,-5 T 15,10 T 0,15 T -15,10 T -10,-5" fill="#8bc34a" />
+      <path d="M -5,-3 Q 0,-10 5,-3 T 8,5 T 0,8 T -8,5 T -5,-3" fill="#9ccc65" />
+    </g>
+    
+    <!-- Labels -->
+    <rect x="-40" y="40" width="80" height="20" rx="5" fill="#f5f5f5" opacity="0.9" />
+    <text x="0" y="55" font-family="Arial, sans-serif" font-size="12" fill="#333" text-anchor="middle">LETTUCE</text>
+  </g>
+  
+  <g transform="translate(300, 470)">
+    <!-- Bed 2 -->
+    <rect x="-80" y="-50" width="160" height="100" rx="5" fill="#5d4037" />
+    <rect x="-70" y="-40" width="140" height="80" fill="#795548" />
+    
+    <!-- Carrots in Bed 2 -->
+    <g transform="translate(-50, -10)">
+      <!-- Carrot Tops -->
+      <path d="M -10,0 Q -5,-15 0,-5 Q 5,-20 10,0" stroke="#66bb6a" stroke-width="1.5" fill="none" />
+      <path d="M -8,0 Q -3,-18 0,-3 Q 3,-15 8,0" stroke="#66bb6a" stroke-width="1.5" fill="none" />
+      <path d="M -6,0 Q -2,-12 0,-2 Q 2,-12 6,0" stroke="#66bb6a" stroke-width="1.5" fill="none" />
+      <!-- Carrot -->
+      <path d="M -3,0 Q 0,20 3,0" fill="#ff8a65" />
+    </g>
+    
+    <g transform="translate(-20, 0)">
+      <!-- Carrot Tops -->
+      <path d="M -10,0 Q -5,-15 0,-5 Q 5,-20 10,0" stroke="#66bb6a" stroke-width="1.5" fill="none" />
+      <path d="M -8,0 Q -3,-18 0,-3 Q 3,-15 8,0" stroke="#66bb6a" stroke-width="1.5" fill="none" />
+      <path d="M -6,0 Q -2,-12 0,-2 Q 2,-12 6,0" stroke="#66bb6a" stroke-width="1.5" fill="none" />
+      <!-- Carrot -->
+      <path d="M -3,0 Q 0,20 3,0" fill="#ff8a65" />
+    </g>
+    
+    <g transform="translate(20, -5)">
+      <!-- Carrot Tops -->
+      <path d="M -10,0 Q -5,-15 0,-5 Q 5,-20 10,0" stroke="#66bb6a" stroke-width="1.5" fill="none" />
+      <path d="M -8,0 Q -3,-18 0,-3 Q 3,-15 8,0" stroke="#66bb6a" stroke-width="1.5" fill="none" />
+      <path d="M -6,0 Q -2,-12 0,-2 Q 2,-12 6,0" stroke="#66bb6a" stroke-width="1.5" fill="none" />
+      <!-- Carrot -->
+      <path d="M -3,0 Q 0,20 3,0" fill="#ff8a65" />
+    </g>
+    
+    <g transform="translate(50, 0)">
+      <!-- Carrot Tops -->
+      <path d="M -10,0 Q -5,-15 0,-5 Q 5,-20 10,0" stroke="#66bb6a" stroke-width="1.5" fill="none" />
+      <path d="M -8,0 Q -3,-18 0,-3 Q 3,-15 8,0" stroke="#66bb6a" stroke-width="1.5" fill="none" />
+      <path d="M -6,0 Q -2,-12 0,-2 Q 2,-12 6,0" stroke="#66bb6a" stroke-width="1.5" fill="none" />
+      <!-- Carrot -->
+      <path d="M -3,0 Q 0,20 3,0" fill="#ff8a65" />
+    </g>
+    
+    <!-- Labels -->
+    <rect x="-40" y="40" width="80" height="20" rx="5" fill="#f5f5f5" opacity="0.9" />
+    <text x="0" y="55" font-family="Arial, sans-serif" font-size="12" fill="#333" text-anchor="middle">CARROTS</text>
+  </g>
+  
+  <g transform="translate(500, 450)">
+    <!-- Bed 3 -->
+    <rect x="-80" y="-50" width="160" height="100" rx="5" fill="#5d4037" />
+    <rect x="-70" y="-40" width="140" height="80" fill="#795548" />
+    
+    <!-- Tomatoes in Bed 3 -->
+    <g transform="translate(-40, 0)">
+      <!-- Plant -->
+      <rect x="-3" y="-25" width="6" height="25" fill="#388e3c" />
+      <path d="M 0,-25 Q -15,-40 -20,-30" stroke="#388e3c" stroke-width="2" fill="none" />
+      <path d="M 0,-25 Q 15,-40 20,-30" stroke="#388e3c" stroke-width="2" fill="none" />
+      <path d="M 0,-15 Q -10,-25 -15,-20" stroke="#388e3c" stroke-width="2" fill="none" />
+      <path d="M 0,-15 Q 10,-25 15,-20" stroke="#388e3c" stroke-width="2" fill="none" />
+      
+      <!-- Tomatoes -->
+      <circle cx="-15" cy="-25" r="8" fill="#e53935" />
+      <circle cx="12" cy="-22" r="7" fill="#e53935" />
+      <circle cx="-10" cy="-15" r="6" fill="#e53935" />
+    </g>
+    
+    <g transform="translate(40, -5)">
+      <!-- Plant -->
+      <rect x="-3" y="-25" width="6" height="25" fill="#388e3c" />
+      <path d="M 0,-25 Q -15,-40 -20,-30" stroke="#388e3c" stroke-width="2" fill="none" />
+      <path d="M 0,-25 Q 15,-40 20,-30" stroke="#388e3c" stroke-width="2" fill="none" />
+      <path d="M 0,-15 Q -10,-25 -15,-20" stroke="#388e3c" stroke-width="2" fill="none" />
+      <path d="M 0,-15 Q 10,-25 15,-20" stroke="#388e3c" stroke-width="2" fill="none" />
+      
+      <!-- Tomatoes -->
+      <circle cx="-12" cy="-22" r="7" fill="#e53935" />
+      <circle cx="15" cy="-25" r="8" fill="#e53935" />
+      <circle cx="10" cy="-15" r="6" fill="#e53935" />
+    </g>
+    
+    <!-- Labels -->
+    <rect x="-40" y="40" width="80" height="20" rx="5" fill="#f5f5f5" opacity="0.9" />
+    <text x="0" y="55" font-family="Arial, sans-serif" font-size="12" fill="#333" text-anchor="middle">TOMATOES</text>
+  </g>
+  
+  <g transform="translate(700, 470)">
+    <!-- Bed 4 -->
+    <rect x="-80" y="-50" width="160" height="100" rx="5" fill="#5d4037" />
+    <rect x="-70" y="-40" width="140" height="80" fill="#795548" />
+    
+    <!-- Herbs in Bed 4 -->
+    <g transform="translate(-50, -10)">
+      <!-- Basil -->
+      <rect x="-2" y="-10" width="4" height="20" fill="#1b5e20" />
+      <ellipse cx="0" cy="-20" rx="8" ry="12" fill="#2e7d32" />
+      <ellipse cx="0" cy="-22" rx="6" ry="10" fill="#388e3c" />
+    </g>
+    
+    <g transform="translate(-20, -5)">
+      <!-- Rosemary -->
+      <rect x="-1" y="-15" width="2" height="20" fill="#1b5e20" />
+      <path d="M 0,-15 Q -10,-20 -8,-15 Q -12,-18 -10,-13 Q -14,-16 -12,-11 Q -8,-14 -6,-9" stroke="#2e7d32" stroke-width="1" fill="none" />
+      <path d="M 0,-15 Q 10,-20 8,-15 Q 12,-18 10,-13 Q 14,-16 12,-11 Q 8,-14 6,-9" stroke="#2e7d32" stroke-width="1" fill="none" />
+    </g>
+    
+    <g transform="translate(10, 0)">
+      <!-- Parsley -->
+      <rect x="-1" y="-5" width="2" height="15" fill="#1b5e20" />
+      <path d="M 0,-5 Q -5,-12 -1,-8 Q -6,-14 -2,-10 Q -4,-16 0,-12 Q 4,-16 2,-10 Q 6,-14 2,-8 Q 5,-12 0,-5" fill="#388e3c" />
+    </g>
+    
+    <g transform="translate(35, -5)">
+      <!-- Oregano -->
+      <rect x="-1" y="-10" width="2" height="15" fill="#1b5e20" />
+      <ellipse cx="-3" cy="-15" rx="4" ry="3" fill="#388e3c" />
+      <ellipse cx="0" cy="-18" rx="5" ry="3" fill="#388e3c" />
+      <ellipse cx="3" cy="-15" rx="4" ry="3" fill="#388e3c" />
+    </g>
+    
+    <g transform="translate(60, 0)">
+      <!-- Mint -->
+      <rect x="-1" y="-10" width="2" height="20" fill="#1b5e20" />
+      <ellipse cx="-5" cy="-15" rx="5" ry="3" fill="#66bb6a" />
+      <ellipse cx="0" cy="-20" rx="6" ry="4" fill="#66bb6a" />
+      <ellipse cx="5" cy="-15" rx="5" ry="3" fill="#66bb6a" />
+    </g>
+    
+    <!-- Labels -->
+    <rect x="-40" y="40" width="80" height="20" rx="5" fill="#f5f5f5" opacity="0.9" />
+    <text x="0" y="55" font-family="Arial, sans-serif" font-size="12" fill="#333" text-anchor="middle">HERBS</text>
+  </g>
+  
+  <!-- Garden Fence -->
+  <g stroke="#8d6e63" stroke-width="4" fill="none">
+    <line x1="20" y1="400" x2="20" y2="520" />
+    <line x1="60" y1="400" x2="60" y2="520" />
+    <line x1="100" y1="400" x2="100" y2="520" />
+    <line x1="140" y1="400" x2="140" y2="520" />
+    <line x1="180" y1="400" x2="180" y2="520" />
+    <line x1="220" y1="400" x2="220" y2="520" />
+    <line x1="260" y1="400" x2="260" y2="520" />
+    <line x1="300" y1="400" x2="300" y2="520" />
+    <line x1="340" y1="400" x2="340" y2="520" />
+    <line x1="380" y1="400" x2="380" y2="520" />
+    <line x1="420" y1="400" x2="420" y2="520" />
+    <line x1="460" y1="400" x2="460" y2="520" />
+    <line x1="500" y1="400" x2="500" y2="520" />
+    <line x1="540" y1="400" x2="540" y2="520" />
+    <line x1="580" y1="400" x2="580" y2="520" />
+    <line x1="620" y1="400" x2="620" y2="520" />
+    <line x1="660" y1="400" x2="660" y2="520" />
+    <line x1="700" y1="400" x2="700" y2="520" />
+    <line x1="740" y1="400" x2="740" y2="520" />
+    <line x1="780" y1="400" x2="780" y2="520" />
+    
+    <line x1="0" y1="400" x2="800" y2="400" />
+    <line x1="0" y1="430" x2="800" y2="430" />
+    <line x1="0" y1="520" x2="800" y2="520" />
+  </g>
+  
+  <!-- Garden Path -->
+  <path d="M 400,520 Q 400,480 350,450 Q 300,420 200,420 Q 100,420 0,440" fill="#d7ccc8" />
+  
+  <!-- Wheelbarrow -->
+  <g transform="translate(650, 350)">
+    <ellipse cx="30" cy="30" rx="20" ry="20" fill="#90a4ae" stroke="#546e7a" stroke-width="2" />
+    <ellipse cx="30" cy="30" rx="10" ry="10" fill="#cfd8dc" />
+    <path d="M 30,30 L -30,30 L -40,0 Q -20,-20 10,-10 L 30,0 z" fill="#4e342e" />
+    <path d="M 30,30 L -30,30 L -35,10 Q -20,-5 0,0 L 30,10 z" fill="#795548" />
+    <path d="M -30,30 L -40,0 L -50,10 L -40,30 z" fill="#3e2723" />
+    <line x1="-40" y1="30" x2="-50" y2="10" stroke="#3e2723" stroke-width="2" />
+    <line x1="-40" y1="0" x2="-50" y2="10" stroke="#3e2723" stroke-width="3" />
+  </g>
+  
+  <!-- Watering Can -->
+  <g transform="translate(120, 360)">
+    <path d="M 0,0 L 30,0 L 30,20 L 25,25 L 5,25 L 0,20 z" fill="#90a4ae" />
+    <path d="M 5,0 L 25,0 L 25,5 L 5,5 z" fill="#cfd8dc" />
+    <rect x="12" y="-10" width="6" height="10" fill="#78909c" />
+    <path d="M 15,-20 Q 30,-15 30,0 L 25,0 Q 25,-12 15,-15 z" fill="#78909c" />
+  </g>
+  
+  <!-- Gardener -->
+  <g transform="translate(450, 380)">
+    <!-- Head -->
+    <circle cx="0" cy="-40" r="15" fill="#ffca28" />
+    <circle cx="-5" cy="-42" r="2" fill="#3e2723" />
+    <circle cx="5" cy="-42" r="2" fill="#3e2723" />
+    <path d="M -5,-35 Q 0,-32 5,-35" fill="none" stroke="#3e2723" stroke-width="1" />
+    
+    <!-- Hat -->
+    <path d="M -15,-50 Q 0,-60 15,-50 L 25,-45 L -25,-45 z" fill="#8d6e63" />
+    <ellipse cx="0" cy="-45" rx="25" ry="5" fill="#a1887f" />
+    
+    <!-- Body -->
+    <rect x="-15" y="-25" width="30" height="40" rx="5" fill="#66bb6a" />
+    <rect x="-15" y="-25" width="30" height="10" fill="#4caf50" />
+    
+    <!-- Arms -->
+    <rect x="-30" y="-20" width="15" height="8" rx="4" fill="#66bb6a" />
+    <rect x="15" y="-15" width="15" height="8" rx="4" fill="#66bb6a" />
+    
+    <!-- Garden Tool -->
+    <rect x="30" y="-15" width="20" height="3" fill="#8d6e63" />
+    <path d="M 50,-15 L 55,-20 L 58,-15 L 55,-10 z" fill="#78909c" />
+    
+    <!-- Legs -->
+    <rect x="-12" y="15" width="8" height="25" rx="2" fill="#388e3c" />
+    <rect x="4" y="15" width="8" height="25" rx="2" fill="#388e3c" />
+    
+    <!-- Feet -->
+    <rect x="-15" y="40" width="12" height="5" rx="2" fill="#5d4037" />
+    <rect x="3" y="40" width="12" height="5" rx="2" fill="#5d4037" />
+  </g>
+  
+  <!-- Butterflies -->
+  <g transform="translate(200, 300)">
+    <path d="M 0,0 Q 10,-10 5,-20 Q 0,-10 -5,-20 Q -10,-10 0,0" fill="#ffeb3b" opacity="0.7" />
+    <line x1="0" y1="0" x2="0" y2="8" stroke="#000" stroke-width="1" />
+    <circle cx="0" cy="-2" r="2" fill="#ffa000" />
+  </g>
+  
+  <g transform="translate(400, 250)">
+    <path d="M 0,0 Q 8,-8 4,-15 Q 0,-8 -4,-15 Q -8,-8 0,0" fill="#e91e63" opacity="0.7" />
+    <line x1="0" y1="0" x2="0" y2="6" stroke="#000" stroke-width="1" />
+    <circle cx="0" cy="-1" r="1.5" fill="#c2185b" />
+  </g>
+  
+  <!-- Sign -->
+  <g transform="translate(400, 350)">
+    <rect x="-100" y="-50" width="200" height="40" rx="5" fill="#8d6e63" />
+    <rect x="-90" y="-45" width="180" height="30" rx="3" fill="#a1887f" />
+    <text x="0" y="-25" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#fff" text-anchor="middle">VIVAVEGGIE GARDEN</text>
+    <rect x="-5" y="-10" width="10" height="60" fill="#5d4037" />
+  </g>
+  
+  <!-- Birds -->
+  <g transform="translate(250, 180)">
+    <path d="M 0,0 Q 5,-5 10,0 Q 15,-5 20,0 Q 15,5 10,0 Q 5,5 0,0" fill="#3e2723" />
+  </g>
+  
+  <g transform="translate(270, 190)">
+    <path d="M 0,0 Q 4,-4 8,0 Q 12,-4 16,0 Q 12,4 8,0 Q 4,4 0,0" fill="#3e2723" />
+  </g>
+  
+  <g transform="translate(550, 170)">
+    <path d="M 0,0 Q 6,-6 12,0 Q 18,-6 24,0 Q 18,6 12,0 Q 6,6 0,0" fill="#3e2723" />
+  </g>
+</svg>

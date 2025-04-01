@@ -11,6 +11,10 @@ interface NavbarProps {
     menu: () => void;
     preorder: () => void;
     ingredientMap?: () => void; // Optional to maintain compatibility
+    virtualTour?: () => void;
+    dynamicMenu?: () => void;
+    originStory?: () => void;
+    loyaltyProgram?: () => void;
   };
 }
 
@@ -166,6 +170,74 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
                 />
               </motion.a>
             )}
+            {onNavigate.virtualTour && (
+              <motion.a
+                onClick={() => onNavigate.virtualTour && onNavigate.virtualTour()} 
+                className="hover:text-accent-light transition duration-300 cursor-pointer relative group"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Virtual Tour
+                <motion.span 
+                  className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-light group-hover:w-full transition-all duration-300"
+                  layoutId="navUnderline"
+                />
+              </motion.a>
+            )}
+            {onNavigate.dynamicMenu && (
+              <motion.a
+                onClick={() => onNavigate.dynamicMenu && onNavigate.dynamicMenu()} 
+                className="hover:text-accent-light transition duration-300 cursor-pointer relative group"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.9 }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Seasonal Menu
+                <motion.span 
+                  className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-light group-hover:w-full transition-all duration-300"
+                  layoutId="navUnderline"
+                />
+              </motion.a>
+            )}
+            {onNavigate.originStory && (
+              <motion.a
+                onClick={() => onNavigate.originStory && onNavigate.originStory()} 
+                className="hover:text-accent-light transition duration-300 cursor-pointer relative group"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 1.0 }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Origin Story
+                <motion.span 
+                  className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-light group-hover:w-full transition-all duration-300"
+                  layoutId="navUnderline"
+                />
+              </motion.a>
+            )}
+            {onNavigate.loyaltyProgram && (
+              <motion.a
+                onClick={() => onNavigate.loyaltyProgram && onNavigate.loyaltyProgram()} 
+                className="hover:text-accent-light transition duration-300 cursor-pointer relative group"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 1.1 }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Rewards
+                <motion.span 
+                  className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-light group-hover:w-full transition-all duration-300"
+                  layoutId="navUnderline"
+                />
+              </motion.a>
+            )}
           </div>
           <div className="md:hidden">
             <button 
@@ -204,6 +276,38 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
               className="py-2 hover:text-accent-light transition duration-300 cursor-pointer"
             >
               Ingredient Map
+            </a>
+          )}
+          {onNavigate.virtualTour && (
+            <a 
+              onClick={() => onNavigate.virtualTour && handleNavClick(onNavigate.virtualTour)} 
+              className="py-2 hover:text-accent-light transition duration-300 cursor-pointer"
+            >
+              Virtual Tour
+            </a>
+          )}
+          {onNavigate.dynamicMenu && (
+            <a 
+              onClick={() => onNavigate.dynamicMenu && handleNavClick(onNavigate.dynamicMenu)} 
+              className="py-2 hover:text-accent-light transition duration-300 cursor-pointer"
+            >
+              Seasonal Menu
+            </a>
+          )}
+          {onNavigate.originStory && (
+            <a 
+              onClick={() => onNavigate.originStory && handleNavClick(onNavigate.originStory)} 
+              className="py-2 hover:text-accent-light transition duration-300 cursor-pointer"
+            >
+              Origin Story
+            </a>
+          )}
+          {onNavigate.loyaltyProgram && (
+            <a 
+              onClick={() => onNavigate.loyaltyProgram && handleNavClick(onNavigate.loyaltyProgram)} 
+              className="py-2 hover:text-accent-light transition duration-300 cursor-pointer"
+            >
+              Loyalty Program
             </a>
           )}
         </div>
