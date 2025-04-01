@@ -492,8 +492,8 @@ const IngredientMap: React.FC = () => {
   const [selectedIngredient, setSelectedIngredient] = useState<Ingredient | null>(null);
   const [hoveredFarm, setHoveredFarm] = useState<number | null>(null);
   const [mapLoaded, setMapLoaded] = useState(false);
-  const [activeView, setActiveView] = useState<'map' | 'satellite'>('map');
-  const [showConnections, setShowConnections] = useState(true);
+  const [activeView, setActiveView] = useState<'map' | 'satellite'>('map'); // Default to map view
+  const [showConnections, setShowConnections] = useState(true); // Default to showing supply routes
   
   useEffect(() => {
     // Fix Leaflet's icon path issues 
@@ -540,8 +540,8 @@ const IngredientMap: React.FC = () => {
       farm,
       positions: [restaurantLocation, farm.location] as LatLngTuple[],
       color: farm.id === selectedFarm?.id ? '#16a34a' : '#22c55e',
-      weight: farm.id === selectedFarm?.id ? 3 : 1,
-      opacity: farm.id === selectedFarm?.id ? 0.8 : 0.3,
+      weight: farm.id === selectedFarm?.id ? 3 : 1.5,
+      opacity: farm.id === selectedFarm?.id ? 0.9 : 0.6,
       dashArray: farm.id === selectedFarm?.id ? '' : '5, 10',
     }));
   };

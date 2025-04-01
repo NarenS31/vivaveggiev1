@@ -61,13 +61,21 @@ export const contactFormSchema = z.object({
     .min(2, { message: "Name must be at least 2 characters" })
     .max(50, { message: "Name must be less than 50 characters" }),
   email: z.string()
-    .email({ message: "Please enter a valid email address" })
     .min(5, { message: "Email is too short" })
-    .max(100, { message: "Email is too long" }),
+    .max(100, { message: "Email is too long" })
+    .refine(val => val.includes('@'), {
+      message: "Email must contain an '@' symbol"
+    })
+    .refine(val => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val), {
+      message: "Please enter a valid email format (user@example.com)"
+    }),
   phone: z.string()
-    .min(10, { message: "Phone number must be at least 10 digits" })
-    .max(15, { message: "Phone number must be less than 15 digits" })
-    .regex(/^[0-9\+\-\(\)\s]+$/, { message: "Please enter a valid phone number" }),
+    .refine(val => /^\d{10}$/.test(val.replace(/\D/g, '')), {
+      message: "Phone number must contain exactly 10 digits"
+    })
+    .refine(val => /^[\d\+\-\(\)\s]+$/.test(val), {
+      message: "Phone number can only contain digits, spaces, and +()-"
+    }),
   orderType: z.enum(["pickup", "delivery"], { 
     errorMap: () => ({ message: "Please select a valid order type" }) 
   }),
@@ -78,7 +86,10 @@ export const contactFormSchema = z.object({
       message: "Address is required for delivery orders" 
     }),
   pickupTime: z.string()
-    .min(1, { message: "Please select a pickup/delivery time" }),
+    .min(1, { message: "Please select a pickup/delivery time" })
+    .refine(val => new Date(val) > new Date(), {
+      message: "Pickup/delivery time must be in the future"  
+    }),
   dietaryRestrictions: z.array(z.string()).optional(),
   specialInstructions: z.string().optional(),
 });
