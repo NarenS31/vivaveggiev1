@@ -57,57 +57,93 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
           <div className="hidden md:flex space-x-8 text-neutral-light font-medium">
             <motion.a
               onClick={() => onNavigate.home()} 
-              className="hover:text-accent-light transition duration-300 cursor-pointer"
+              className="hover:text-accent-light transition duration-300 cursor-pointer relative group"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
             >
               Home
+              <motion.span 
+                className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-light group-hover:w-full transition-all duration-300"
+                layoutId="navUnderline"
+              />
             </motion.a>
             <motion.a
               onClick={() => onNavigate.about()} 
-              className="hover:text-accent-light transition duration-300 cursor-pointer"
+              className="hover:text-accent-light transition duration-300 cursor-pointer relative group"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
             >
               Our Story
+              <motion.span 
+                className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-light group-hover:w-full transition-all duration-300"
+                layoutId="navUnderline"
+              />
             </motion.a>
             <motion.a
               onClick={() => onNavigate.process()} 
-              className="hover:text-accent-light transition duration-300 cursor-pointer"
+              className="hover:text-accent-light transition duration-300 cursor-pointer relative group"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
             >
               Farm-to-Table
+              <motion.span 
+                className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-light group-hover:w-full transition-all duration-300"
+                layoutId="navUnderline"
+              />
             </motion.a>
             <motion.a
               onClick={() => onNavigate.team()} 
-              className="hover:text-accent-light transition duration-300 cursor-pointer"
+              className="hover:text-accent-light transition duration-300 cursor-pointer relative group"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
             >
               Our Team
+              <motion.span 
+                className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-light group-hover:w-full transition-all duration-300"
+                layoutId="navUnderline"
+              />
             </motion.a>
             <motion.a
               onClick={() => onNavigate.menu()} 
-              className="hover:text-accent-light transition duration-300 cursor-pointer"
+              className="hover:text-accent-light transition duration-300 cursor-pointer relative group"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
             >
               Menu
+              <motion.span 
+                className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-light group-hover:w-full transition-all duration-300"
+                layoutId="navUnderline"
+              />
             </motion.a>
             <motion.a
               onClick={() => onNavigate.preorder()} 
-              className="hover:text-accent-light transition duration-300 cursor-pointer"
+              className="hover:text-accent-light transition duration-300 cursor-pointer relative group"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
             >
               Pre-Order
+              <motion.span 
+                className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-light group-hover:w-full transition-all duration-300"
+                layoutId="navUnderline"
+              />
             </motion.a>
           </div>
           <div className="md:hidden">

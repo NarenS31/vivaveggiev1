@@ -1,5 +1,7 @@
+import { eq } from "drizzle-orm";
 import { users, type User, type InsertUser, orders, type Order, type InsertOrder, type MenuItem, menuItemSchema } from "@shared/schema";
 import { menuItems as defaultMenuItems } from "../client/src/data/menuItems";
+import { db } from "./db";
 
 // Interface for storage methods
 export interface IStorage {
@@ -16,7 +18,7 @@ export interface IStorage {
   getMenuItems(): MenuItem[];
 }
 
-// In-memory storage implementation
+// In-memory storage implementation (kept for reference)
 export class MemStorage implements IStorage {
   private users: Map<number, User>;
   private orders: Map<string, Order>; // orderNumber -> Order
@@ -54,11 +56,31 @@ export class MemStorage implements IStorage {
   }
   
   async createOrder(order: InsertOrder): Promise<Order> {
-    // Ensure order has all required fields
+    // Convert any undefined values to null for DB compatibility
+    const sanitizedOrder: InsertOrder = {
+      ...order,
+      address: order.address || null,
+      dietaryRestrictions: order.dietaryRestrictions || null,
+      specialInstructions: order.specialInstructions || null,
+      estimatedTime: order.estimatedTime || null
+    };
+    
+    // Ensure order has all required fields with proper null handling
     const newOrder: Order = {
       id: this.orders.size + 1,
       orderDate: new Date(),
-      ...order,
+      name: sanitizedOrder.name,
+      email: sanitizedOrder.email,
+      phone: sanitizedOrder.phone,
+      orderType: sanitizedOrder.orderType,
+      pickupTime: sanitizedOrder.pickupTime,
+      address: sanitizedOrder.address as string | null,
+      dietaryRestrictions: sanitizedOrder.dietaryRestrictions as string[] | null,
+      specialInstructions: sanitizedOrder.specialInstructions as string | null,
+      items: sanitizedOrder.items,
+      total: sanitizedOrder.total,
+      orderNumber: sanitizedOrder.orderNumber,
+      estimatedTime: sanitizedOrder.estimatedTime as string | null
     };
     
     // Store order by orderNumber for fast lookup
@@ -73,4 +95,80 @@ export class MemStorage implements IStorage {
   }
 }
 
+// PostgreSQL storage implementation
+export class PgStorage implements IStorage {
+  private menuItems: MenuItem[];
+  
+  constructor() {
+    this.menuItems = defaultMenuItems;
+  }
+
+  // User methods
+  async getUser(id: number): Promise<User | undefined> {
+    try {
+      const result = await db.select().from(users).where(eq(users.id, id)).limit(1);
+      return result[0];
+    } catch (error) {
+      console.error('Error getting user by ID:', error);
+      return undefined;
+    }
+  }
+
+  async getUserByUsername(username: string): Promise<User | undefined> {
+    try {
+      const result = await db.select().from(users).where(eq(users.username, username)).limit(1);
+      return result[0];
+    } catch (error) {
+      console.error('Error getting user by username:', error);
+      return undefined;
+    }
+  }
+
+  async createUser(insertUser: InsertUser): Promise<User> {
+    try {
+      const result = await db.insert(users).values(insertUser).returning();
+      return result[0];
+    } catch (error) {
+      console.error('Error creating user:', error);
+      throw error;
+    }
+  }
+  
+  // Order methods
+  async getOrderByNumber(orderNumber: string): Promise<Order | undefined> {
+    try {
+      const result = await db.select().from(orders).where(eq(orders.orderNumber, orderNumber)).limit(1);
+      return result[0];
+    } catch (error) {
+      console.error('Error getting order by order number:', error);
+      return undefined;
+    }
+  }
+  
+  async createOrder(order: InsertOrder): Promise<Order> {
+    try {
+      // Convert any undefined values to null for DB compatibility
+      const sanitizedOrder: InsertOrder = {
+        ...order,
+        address: order.address || null,
+        dietaryRestrictions: order.dietaryRestrictions || null,
+        specialInstructions: order.specialInstructions || null,
+        estimatedTime: order.estimatedTime || null
+      };
+      
+      const result = await db.insert(orders).values(sanitizedOrder).returning();
+      return result[0];
+    } catch (error) {
+      console.error('Error creating order:', error);
+      throw error;
+    }
+  }
+  
+  // Menu items (still in-memory since they're static data)
+  getMenuItems(): MenuItem[] {
+    return this.menuItems;
+  }
+}
+
+// Use the in-memory storage implementation for now
 export const storage = new MemStorage();

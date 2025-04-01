@@ -163,18 +163,27 @@ const MenuSection: React.FC = () => {
             {filteredItems.map((item) => (
               <motion.div 
                 key={item.id} 
-                className="bg-white rounded-lg shadow-lg overflow-hidden"
+                className="bg-white rounded-lg shadow-lg overflow-hidden relative"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4 }}
-                whileHover={{ y: -10, transition: { duration: 0.2 } }}
+                whileHover={{ 
+                  y: -15, 
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                  scale: 1.03,
+                  transition: { duration: 0.2 } 
+                }}
               >
-                <img 
-                  src={item.image} 
-                  alt={item.name} 
-                  className="w-full h-48 object-cover" 
-                />
+                <div className="relative overflow-hidden group">
+                  <img 
+                    src={item.image} 
+                    alt={item.name} 
+                    className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110" 
+                  />
+                  <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                  <div className="absolute -inset-1 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-30 blur-xl group-hover:animate-shine"></div>
+                </div>
                 <div className="p-6">
                   <div className="flex justify-between items-start mb-2">
                     <h3 className="font-heading text-xl text-primary-dark">{item.name}</h3>
@@ -188,12 +197,15 @@ const MenuSection: React.FC = () => {
                       </span>
                     ))}
                   </div>
-                  <button 
-                    className="w-full bg-primary hover:bg-primary-dark text-white font-medium py-2 rounded transition duration-300"
+                  <motion.button 
+                    className="w-full bg-primary hover:bg-primary-dark text-white font-medium py-2 rounded transition duration-300 relative overflow-hidden group"
                     onClick={() => addToOrder(item)}
+                    whileTap={{ scale: 0.95 }}
                   >
-                    Add to Order
-                  </button>
+                    <span className="relative z-10">Add to Order</span>
+                    <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
+                    <span className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white to-transparent -translate-x-full group-hover:animate-shine"></span>
+                  </motion.button>
                 </div>
               </motion.div>
             ))}
