@@ -32,37 +32,37 @@ const Home: React.FC = () => {
 
   // Active tab state for menu navigation
   const [activeTab, setActiveTab] = useState("menu");
-  
+
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
     if (ref.current) {
       ref.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
-  
+
   // Enhanced menu navigation that first scrolls to menu section, then switches tab
   const handleMenuClick = () => {
     scrollToSection(menuRef);
     setActiveTab("menu");
   };
-  
+
   // Handler for ingredient map navigation
   const handleIngredientMapClick = () => {
     scrollToSection(ingredientMapRef);
   };
-  
+
   // Handlers for new features navigation
   const handleVirtualTourClick = () => {
     scrollToSection(virtualTourRef);
   };
-  
+
   const handleDynamicMenuClick = () => {
     scrollToSection(dynamicMenuRef);
   };
-  
+
   const handleOriginStoryClick = () => {
     scrollToSection(originStoryRef);
   };
-  
+
   const handleLoyaltyProgramClick = () => {
     scrollToSection(loyaltyProgramRef);
   };
@@ -84,7 +84,7 @@ const Home: React.FC = () => {
           loyaltyProgram: handleLoyaltyProgramClick,
         }} 
       />
-      
+
       <main>
         <motion.div 
           ref={homeRef} 
@@ -97,7 +97,7 @@ const Home: React.FC = () => {
             onPreOrderClick={() => scrollToSection(preorderRef)}
           />
         </motion.div>
-        
+
         <motion.div 
           ref={aboutRef}
           initial={{ opacity: 0 }}
@@ -107,7 +107,7 @@ const Home: React.FC = () => {
         >
           <AboutSection />
         </motion.div>
-        
+
         <motion.div 
           ref={processRef}
           initial={{ opacity: 0 }}
@@ -117,7 +117,7 @@ const Home: React.FC = () => {
         >
           <ProcessSection />
         </motion.div>
-        
+
         <motion.div 
           ref={teamRef}
           initial={{ opacity: 0 }}
@@ -127,7 +127,7 @@ const Home: React.FC = () => {
         >
           <TeamSection />
         </motion.div>
-        
+
         <motion.div 
           ref={menuRef}
           initial={{ opacity: 0 }}
@@ -137,7 +137,7 @@ const Home: React.FC = () => {
         >
           <MenuSection />
         </motion.div>
-        
+
         <motion.div 
           ref={preorderRef}
           initial={{ opacity: 0 }}
@@ -147,7 +147,7 @@ const Home: React.FC = () => {
         >
           <OrderForm />
         </motion.div>
-        
+
         <motion.div
           ref={ingredientMapRef}
           initial={{ opacity: 0 }}
@@ -157,18 +157,17 @@ const Home: React.FC = () => {
         >
           <IngredientMap />
         </motion.div>
-        
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <TestimonialsSection />
+
+        <motion.div className="flex flex-wrap w-full">
+          <div className="w-full">
+            <ProcessSection />
+            <TeamSection />
+            <TestimonialsSection />
+          </div>
         </motion.div>
 
+
         <motion.div
-          ref={virtualTourRef}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -186,7 +185,7 @@ const Home: React.FC = () => {
         >
           <DynamicMenu />
         </motion.div>
-        
+
         <motion.div
           ref={originStoryRef}
           initial={{ opacity: 0 }}
@@ -196,7 +195,7 @@ const Home: React.FC = () => {
         >
           <OriginStory />
         </motion.div>
-        
+
         <motion.div
           ref={loyaltyProgramRef}
           initial={{ opacity: 0 }}
@@ -215,7 +214,7 @@ const Home: React.FC = () => {
           <LoyaltyProgramCard />
         </motion.div>
       </main>
-      
+
       <Footer />
     </div>
   );

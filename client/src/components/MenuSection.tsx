@@ -153,7 +153,7 @@ const MenuSection: React.FC = () => {
 
         {/* Menu Grid */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-4"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}

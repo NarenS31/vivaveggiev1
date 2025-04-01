@@ -119,6 +119,20 @@
     font-family: var(--font-accent);
   }
 
+  /* Menu text adjustments */
+  #menu .text-primary-dark {
+    font-size: 1rem;
+  }
+  
+  #menu p {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  
+  #menu .text-xs {
+    font-size: 0.7rem;
+  }
+
   /* Roadmap styling */
   .roadmap-connector {
     background-color: hsl(145, 63%, 35%);
