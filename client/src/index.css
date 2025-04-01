@@ -24,11 +24,11 @@
 
   /* Custom colors */
   .text-primary-dark {
-    color: hsl(114, 21%, 40%);
+    color: hsl(103, 25%, 40%);
   }
 
   .text-primary-light {
-    color: hsl(114, 25%, 55%);
+    color: hsl(103, 25%, 55%);
   }
 
   /* Menu scroll styles */
@@ -36,7 +36,7 @@
     max-height: calc(100vh - 300px);
     overflow-y: auto;
     scrollbar-width: thin;
-    scrollbar-color: hsl(114, 21%, 40%) transparent;
+    scrollbar-color: hsl(103, 25%, 40%) transparent;
   }
 
   .menu-scroll::-webkit-scrollbar {
@@ -48,7 +48,7 @@
   }
 
   .menu-scroll::-webkit-scrollbar-thumb {
-    background-color: hsl(114, 21%, 40%);
+    background-color: hsl(103, 25%, 40%);
     border-radius: 20px;
   }
 
@@ -91,7 +91,7 @@
   }
 
   .bg-primary-light {
-    background-color: hsl(145, 55%, 45%);
+    background-color: hsl(103, 25%, 65%);
   }
 
   .bg-accent {
@@ -123,19 +123,19 @@
   #menu .text-primary-dark {
     font-size: 1rem;
   }
-  
+
   #menu p {
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
-  
+
   #menu .text-xs {
     font-size: 0.7rem;
   }
 
   /* Roadmap styling */
   .roadmap-connector {
-    background-color: hsl(145, 63%, 35%);
+    background-color: hsl(103, 25%, 65%);
     width: 4px !important;
     height: 80px !important;
     opacity: 0.8;
@@ -149,7 +149,7 @@
     position: absolute;
     width: 12px;
     height: 12px;
-    background-color: hsl(145, 63%, 35%);
+    background-color: hsl(103, 25%, 65%);
     border-radius: 50%;
     left: 50%;
     transform: translateX(-50%);

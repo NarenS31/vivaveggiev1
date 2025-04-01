@@ -79,7 +79,8 @@ const MenuSection: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-primary font-heading text-4xl md:text-5xl font-bold mb-4">Our Seasonal Menu</h2>
+          <h1 className="text-primary font-heading text-5xl md:text-6xl font-bold mb-4">Menu</h1>
+          <h2 className="text-primary font-heading text-3xl md:text-4xl font-bold mb-4">Our Seasonal Selection</h2>
           <div className="w-24 h-1 bg-accent mx-auto mb-6"></div>
           <p className="text-neutral-dark max-w-2xl mx-auto">Fresh, local ingredients transformed into delicious plant-based creations</p>
         </motion.div>

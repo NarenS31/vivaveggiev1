@@ -148,6 +148,14 @@ const Home: React.FC = () => {
           <OrderForm />
         </motion.div>
 
+        <motion.div className="flex flex-wrap w-full">
+          <div className="w-full">
+            <ProcessSection />
+            <TeamSection />
+            <TestimonialsSection />
+          </div>
+        </motion.div>
+
         <motion.div
           ref={ingredientMapRef}
           initial={{ opacity: 0 }}
@@ -156,14 +164,6 @@ const Home: React.FC = () => {
           transition={{ duration: 0.5 }}
         >
           <IngredientMap />
-        </motion.div>
-
-        <motion.div className="flex flex-wrap w-full">
-          <div className="w-full">
-            <ProcessSection />
-            <TeamSection />
-            <TestimonialsSection />
-          </div>
         </motion.div>
 
 
