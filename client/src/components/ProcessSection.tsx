@@ -59,7 +59,9 @@ const ProcessSection: React.FC = () => {
                       exit={{ opacity: 0, y: -20 }}
                       transition={{ duration: 0.4 }}
                     >
-                      <h3 className="font-heading text-2xl text-primary-dark mb-3">{step.title}</h3>
+                      <h3 className="font-heading text-2xl text-primary-dark mb-3">
+                        <span className="inline-block mr-2">{stepNumber}.</span> {step.title}
+                      </h3>
                       <p className="text-neutral-dark mb-4">{step.description}</p>
                       <ul className={`space-y-2 text-neutral-dark ${isEven ? 'leaf-bullet' : 'md:text-right leaf-bullet'}`}>
                         {step.bulletPoints.map((point, i) => (
@@ -86,7 +88,7 @@ const ProcessSection: React.FC = () => {
                     
                     {/* Inner content */}
                     <div className="absolute inset-0 rounded-full bg-primary flex items-center justify-center">
-                      {stepNumber}
+                      <span className="relative z-20">{stepNumber}</span>
                     </div>
                   </motion.div>
                 </div>
