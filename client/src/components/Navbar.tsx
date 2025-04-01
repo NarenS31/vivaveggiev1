@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import logoSvg from '../assets/logo.svg';
@@ -60,7 +61,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-sage-green shadow-md' : 'bg-sage-green bg-opacity-90'}`}> {/* Changed color to sage-green */}
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-sage-green shadow-md' : 'bg-sage-green bg-opacity-90'}`}>
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
@@ -75,7 +76,8 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
               <img src={logoSvg} alt="VivaVeggie Logo" className="h-12 mr-2" />
             </motion.div>
           </div>
-          <div className="flex flex-col md:flex-row space-x-4 md:space-x-8 text-primary-dark font-medium"> {/* Changed to flex-col for mobile, flex-row for desktop */}
+          
+          <div className="hidden md:flex space-x-8 text-primary-dark font-medium">
             {menuItems.map((item, index) => (
               <motion.a
                 key={index}
@@ -95,9 +97,16 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
               </motion.a>
             ))}
           </div>
+
           <div className="md:hidden">
             <button onClick={toggleMobileMenu} className="text-neutral-light focus:outline-none">
-              {/* Hamburger menu icon */}
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {mobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
             </button>
           </div>
         </div>
@@ -114,7 +123,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
             <a
               key={index}
               onClick={() => handleNavClick(item.onClick)}
-              className="py-2 hover:text-accent-light transition duration-300 cursor-pointer text-sm" {/* Added text-sm */}
+              className="py-2 hover:text-accent-light transition duration-300 cursor-pointer text-sm"
             >
               {item.name}
             </a>

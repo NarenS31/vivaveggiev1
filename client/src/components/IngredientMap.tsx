@@ -732,7 +732,7 @@ const IngredientMap: React.FC = () => {
                 >
                   <div className="flex justify-between items-start">
                     <h3 className="font-heading text-xl text-primary-dark">{selectedFarm.name}</h3>
-                    <span className="bg-accent text-white text-xs px-2 py1 py-1 rounded-full">
+                    <span className="bg-accent text-white text-xs px-2 py1 py-1.5 rounded-full">
                       {selectedFarm.distance} miles
                     </span>
                   </div>
