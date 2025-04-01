@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import logoSvg from '../assets/logo.svg';
 
 interface NavbarProps {
   onNavigate: {
@@ -46,14 +47,16 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <motion.span 
-              className="text-accent-light font-accent text-3xl"
+            <motion.div
+              className="flex items-center"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
+              onClick={() => onNavigate.home()}
+              style={{ cursor: 'pointer' }}
             >
-              VivaVeggie
-            </motion.span>
+              <img src={logoSvg} alt="VivaVeggie Logo" className="h-12 mr-2" />
+            </motion.div>
           </div>
           <div className="hidden md:flex space-x-8 text-neutral-light font-medium">
             <motion.a

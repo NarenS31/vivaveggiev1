@@ -539,9 +539,9 @@ const IngredientMap: React.FC = () => {
     return farms.map(farm => ({
       farm,
       positions: [restaurantLocation, farm.location] as LatLngTuple[],
-      color: farm.id === selectedFarm?.id ? '#16a34a' : '#22c55e',
-      weight: farm.id === selectedFarm?.id ? 3 : 1.5,
-      opacity: farm.id === selectedFarm?.id ? 0.9 : 0.6,
+      color: farm.id === selectedFarm?.id ? '#000000' : '#333333',
+      weight: farm.id === selectedFarm?.id ? 3 : 2,
+      opacity: farm.id === selectedFarm?.id ? 0.9 : 0.7,
       dashArray: farm.id === selectedFarm?.id ? '' : '5, 10',
     }));
   };

@@ -117,11 +117,16 @@ const OrderForm: React.FC<OrderFormProps> = () => {
       // Validate first step manually
       if (!formValues.name || !formValues.email || !formValues.phone || !formValues.pickupTime || 
           (formValues.orderType === 'delivery' && !formValues.address)) {
+        toast({
+          title: "Missing information",
+          description: "Please fill out all required fields before proceeding.",
+          variant: "destructive"
+        });
         return;
       }
     }
     
-    if (currentStep === 3 && selectedItems.length === 0) {
+    if (currentStep === 2 && selectedItems.length === 0) {
       toast({
         title: "No items selected",
         description: "Please select at least one menu item before proceeding.",

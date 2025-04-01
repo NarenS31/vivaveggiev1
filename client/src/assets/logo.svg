@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="400" height="120">
+  <!-- Main Leaf Shape -->
+  <path d="M75 25 C 110 0, 140 40, 110 80 C 80 110, 40 100, 30 60 C 25 30, 50 15, 75 25 Z" fill="#22c55e" />
+  
+  <!-- Leaf Details -->
+  <path d="M70 35 C 90 20, 115 35, 100 60 C 85 85, 50 80, 45 55 C 40 35, 55 25, 70 35 Z" fill="#15803d" />
+  <path d="M65 45 C 80 35, 90 50, 80 65 C 70 80, 55 70, 55 55 C 55 40, 55 35, 65 45 Z" fill="#16a34a" />
+  
+  <!-- Text VivaVeggie -->
+  <text x="140" y="70" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="#15803d">
+    Viva<tspan fill="#16a34a">Veggie</tspan>
+  </text>
+  
+  <!-- Tagline -->
+  <text x="140" y="93" font-family="Arial, sans-serif" font-size="14" fill="#555">FARM TO TABLE EXPERIENCE</text>
+  
+  <!-- Decorative elements -->
+  <circle cx="90" cy="45" r="4" fill="#fff" />
+  <circle cx="75" cy="60" r="3" fill="#fff" opacity="0.7" />
+  <circle cx="60" cy="50" r="2" fill="#fff" opacity="0.5" />
+  
+  <!-- Separator Line -->
+  <line x1="140" y1="75" x2="350" y2="75" stroke="#ddd" stroke-width="1" />
+</svg>
