@@ -17,12 +17,12 @@ const MenuSection: React.FC = () => {
   // Apply filters when activeFilter or dietaryFilters change
   useEffect(() => {
     let result = allMenuItems;
-    
+
     // Apply category filter
     if (activeFilter !== 'all') {
       result = result.filter(item => item.category.toLowerCase() === activeFilter);
     }
-    
+
     // Apply dietary filters
     if (dietaryFilters.vegan) {
       result = result.filter(item => item.tags.includes('Vegan'));
@@ -33,7 +33,7 @@ const MenuSection: React.FC = () => {
     if (dietaryFilters.nutFree) {
       result = result.filter(item => item.tags.includes('Nut-Free'));
     }
-    
+
     setFilteredItems(result);
   }, [activeFilter, dietaryFilters]);
 
@@ -51,7 +51,7 @@ const MenuSection: React.FC = () => {
   const addToOrder = (item: any) => {
     // Check if item already exists in order
     const existingItemIndex = orderItems.findIndex(i => i.id === item.id);
-    
+
     if (existingItemIndex !== -1) {
       // Update quantity
       const updatedItems = [...orderItems];
@@ -61,7 +61,7 @@ const MenuSection: React.FC = () => {
       // Add new item with quantity 1
       setOrderItems([...orderItems, { ...item, quantity: 1 }]);
     }
-    
+
     toast({
       title: "Added to order",
       description: `${item.name} has been added to your order.`,
@@ -153,7 +153,7 @@ const MenuSection: React.FC = () => {
 
         {/* Menu Grid */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 menu-scroll p-4"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-4"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}

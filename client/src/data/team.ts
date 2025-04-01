@@ -44,7 +44,7 @@ export const farmers = [
     farm: "Sunrise Orchards (28 miles)",
     description: "This husband-and-wife team left corporate careers to start their organic orchard. They grow over 15 varieties of apples, pears, and stone fruits using sustainable practices that promote biodiversity.",
     supplies: "Supplies our fruits for desserts",
-    image: "https://images.unsplash.com/photo-1622383563227-04401ab4e5b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" //Replaced image URL
+    image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   },
   {
     name: "Elena Diaz",
