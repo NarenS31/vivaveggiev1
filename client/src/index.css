@@ -24,11 +24,32 @@
 
   /* Custom colors */
   .text-primary-dark {
-    color: hsl(145, 63%, 30%);
+    color: hsl(114, 21%, 40%);
   }
 
   .text-primary-light {
-    color: hsl(145, 55%, 45%);
+    color: hsl(114, 25%, 55%);
+  }
+
+  /* Menu scroll styles */
+  .menu-scroll {
+    max-height: calc(100vh - 300px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: hsl(114, 21%, 40%) transparent;
+  }
+
+  .menu-scroll::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .menu-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .menu-scroll::-webkit-scrollbar-thumb {
+    background-color: hsl(114, 21%, 40%);
+    border-radius: 20px;
   }
 
   .text-accent-light {
