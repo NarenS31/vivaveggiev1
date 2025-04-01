@@ -80,11 +80,14 @@
   }
 
   .bg-primary {
-    background-color: hsl(145, 63%, 35%);
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
 
   .bg-primary-dark {
-    background-color: hsl(145, 63%, 30%);
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
   }
 
   .bg-primary-light {

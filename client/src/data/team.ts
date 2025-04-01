@@ -20,7 +20,7 @@ export const chefs = [
     title: "Sous Chef",
     bio: "Amelia brings global inspiration to our menu, drawing from her travels across Asia, Europe, and South America. She has a talent for creating bold, complex flavors using simple, sustainable ingredients.",
     quote: "Cooking with plants connects us to the earth and to each other.",
-    image: "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
+    image: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   },
   {
     name: "Chef David Ortiz",

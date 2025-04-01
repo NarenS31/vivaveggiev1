@@ -8,7 +8,7 @@ export const processSteps = [
       "Water conservation practices",
       "Hand-picked for optimal quality"
     ],
-    image: "https://images.unsplash.com/photo-1585438874159-20b4cb968417?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1551649001-7a2482d98d05?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     imageAlt: "Local farmer harvesting fresh vegetables"
   },
   {

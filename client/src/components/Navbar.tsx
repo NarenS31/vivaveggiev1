@@ -62,7 +62,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
               <img src={logoSvg} alt="VivaVeggie Logo" className="h-12 mr-2" />
             </motion.div>
           </div>
-          <div className="hidden md:flex space-x-8 text-neutral-light font-medium">
+          <div className="hidden md:flex space-x-8 text-primary-dark font-medium">
             <motion.a
               onClick={() => onNavigate.home()} 
               className="hover:text-accent-light transition duration-300 cursor-pointer relative group px-4 py-2"
