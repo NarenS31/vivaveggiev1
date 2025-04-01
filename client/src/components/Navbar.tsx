@@ -9,6 +9,7 @@ interface NavbarProps {
     team: () => void;
     menu: () => void;
     preorder: () => void;
+    ingredientMap?: () => void; // Optional to maintain compatibility
   };
 }
 
@@ -145,6 +146,23 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
                 layoutId="navUnderline"
               />
             </motion.a>
+            {onNavigate.ingredientMap && (
+              <motion.a
+                onClick={() => onNavigate.ingredientMap && onNavigate.ingredientMap()} 
+                className="hover:text-accent-light transition duration-300 cursor-pointer relative group"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.7 }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Ingredient Map
+                <motion.span 
+                  className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-light group-hover:w-full transition-all duration-300"
+                  layoutId="navUnderline"
+                />
+              </motion.a>
+            )}
           </div>
           <div className="md:hidden">
             <button 
@@ -177,6 +195,14 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
           <a onClick={() => handleNavClick(onNavigate.team)} className="py-2 hover:text-accent-light transition duration-300 cursor-pointer">Our Team</a>
           <a onClick={() => handleNavClick(onNavigate.menu)} className="py-2 hover:text-accent-light transition duration-300 cursor-pointer">Menu</a>
           <a onClick={() => handleNavClick(onNavigate.preorder)} className="py-2 hover:text-accent-light transition duration-300 cursor-pointer">Pre-Order</a>
+          {onNavigate.ingredientMap && (
+            <a 
+              onClick={() => onNavigate.ingredientMap && handleNavClick(onNavigate.ingredientMap)} 
+              className="py-2 hover:text-accent-light transition duration-300 cursor-pointer"
+            >
+              Ingredient Map
+            </a>
+          )}
         </div>
       </motion.div>
     </nav>

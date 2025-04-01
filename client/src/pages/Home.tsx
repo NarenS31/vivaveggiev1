@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 import Navbar from "../components/Navbar";
@@ -10,6 +10,7 @@ import MenuSection from "../components/MenuSection";
 import OrderForm from "../components/OrderForm";
 import TestimonialsSection from "../components/TestimonialsSection";
 import Footer from "../components/Footer";
+import IngredientMap from "../components/IngredientMap";
 
 const Home: React.FC = () => {
   // References for scroll navigation
@@ -19,11 +20,26 @@ const Home: React.FC = () => {
   const teamRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const preorderRef = useRef<HTMLDivElement>(null);
+  const ingredientMapRef = useRef<HTMLDivElement>(null);
 
+  // Active tab state for menu navigation
+  const [activeTab, setActiveTab] = useState("menu");
+  
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
     if (ref.current) {
       ref.current.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+  
+  // Enhanced menu navigation that first scrolls to menu section, then switches tab
+  const handleMenuClick = () => {
+    scrollToSection(menuRef);
+    setActiveTab("menu");
+  };
+  
+  // Handler for ingredient map navigation
+  const handleIngredientMapClick = () => {
+    scrollToSection(ingredientMapRef);
   };
 
   return (
@@ -34,8 +50,9 @@ const Home: React.FC = () => {
           about: () => scrollToSection(aboutRef),
           process: () => scrollToSection(processRef),
           team: () => scrollToSection(teamRef),
-          menu: () => scrollToSection(menuRef),
+          menu: handleMenuClick,
           preorder: () => scrollToSection(preorderRef),
+          ingredientMap: handleIngredientMapClick,
         }} 
       />
       
@@ -47,7 +64,7 @@ const Home: React.FC = () => {
           transition={{ duration: 0.5 }}
         >
           <HeroSection 
-            onMenuClick={() => scrollToSection(menuRef)}
+            onMenuClick={handleMenuClick}
             onPreOrderClick={() => scrollToSection(preorderRef)}
           />
         </motion.div>
@@ -100,6 +117,16 @@ const Home: React.FC = () => {
           transition={{ duration: 0.5 }}
         >
           <OrderForm />
+        </motion.div>
+        
+        <motion.div
+          ref={ingredientMapRef}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <IngredientMap />
         </motion.div>
         
         <motion.div
