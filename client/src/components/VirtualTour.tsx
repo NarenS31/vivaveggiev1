@@ -75,7 +75,7 @@ const tourPoints: TourPoint[] = [
         x: 75,
         y: 30,
         title: 'Local Artwork',
-        description: 'Our walls feature rotating exhibitions from local artists, celebrating our community's creativity.'
+        description: 'Our walls feature rotating exhibitions from local artists, celebrating our community\'s creativity.'
       },
       {
         id: 'acoustics',
