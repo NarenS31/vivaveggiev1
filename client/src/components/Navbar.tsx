@@ -65,14 +65,14 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
           <div className="hidden md:flex space-x-8 text-neutral-light font-medium">
             <motion.a
               onClick={() => onNavigate.home()} 
-              className="hover:text-accent-light transition duration-300 cursor-pointer relative group"
+              className="hover:text-accent-light transition duration-300 cursor-pointer relative group px-4 py-2"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
             >
-              Home
+              Welcome
               <motion.span 
                 className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-light group-hover:w-full transition-all duration-300"
                 layoutId="navUnderline"
@@ -80,14 +80,14 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
             </motion.a>
             <motion.a
               onClick={() => onNavigate.about()} 
-              className="hover:text-accent-light transition duration-300 cursor-pointer relative group"
+              className="hover:text-accent-light transition duration-300 cursor-pointer relative group px-4 py-2"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
             >
-              Our Story
+              Journey
               <motion.span 
                 className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-light group-hover:w-full transition-all duration-300"
                 layoutId="navUnderline"
@@ -95,14 +95,14 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
             </motion.a>
             <motion.a
               onClick={() => onNavigate.process()} 
-              className="hover:text-accent-light transition duration-300 cursor-pointer relative group"
+              className="hover:text-accent-light transition duration-300 cursor-pointer relative group px-4 py-2"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
             >
-              Farm-to-Table
+              Garden to Plate
               <motion.span 
                 className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-light group-hover:w-full transition-all duration-300"
                 layoutId="navUnderline"
@@ -110,14 +110,14 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
             </motion.a>
             <motion.a
               onClick={() => onNavigate.team()} 
-              className="hover:text-accent-light transition duration-300 cursor-pointer relative group"
+              className="hover:text-accent-light transition duration-300 cursor-pointer relative group px-4 py-2"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
             >
-              Our Team
+              Our Family
               <motion.span 
                 className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-light group-hover:w-full transition-all duration-300"
                 layoutId="navUnderline"

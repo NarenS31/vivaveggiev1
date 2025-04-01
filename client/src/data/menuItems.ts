@@ -87,7 +87,7 @@ export const menuItems: MenuItem[] = [
     name: "Cucumber Mint Refresher",
     price: 5.99,
     description: "Sparkling water with fresh cucumber, mint, and lime",
-    image: "https://images.unsplash.com/photo-1562368302-e7a8584d0fda?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     tags: ["Vegan", "Gluten-Free", "Seasonal"],
     category: "drinks"
   },
@@ -96,7 +96,7 @@ export const menuItems: MenuItem[] = [
     name: "Golden Milk Latte",
     price: 4.99,
     description: "Turmeric and ginger infused plant milk with a touch of maple syrup",
-    image: "https://images.unsplash.com/photo-1626198226928-29a8799cf0aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     tags: ["Vegan", "Anti-inflammatory"],
     category: "drinks"
   },

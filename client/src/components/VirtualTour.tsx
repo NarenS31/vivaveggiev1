@@ -237,7 +237,7 @@ const VirtualTour: React.FC = () => {
 
   return (
     <section id="virtual-tour" className="py-16 md:py-24">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 py-12 bg-gradient-to-b from-primary-dark/10 to-transparent">
         <motion.div 
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
