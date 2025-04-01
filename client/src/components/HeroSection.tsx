@@ -9,11 +9,11 @@ interface HeroSectionProps {
 const HeroSection: React.FC<HeroSectionProps> = ({ onMenuClick, onPreOrderClick }) => {
   return (
     <section id="home" className="pt-24 pb-16 md:pt-32 md:pb-24 bg-cover bg-center relative h-screen flex items-center overflow-hidden" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')" }}>
-      {/* Background overlay with gradient */}
+      {/* Background overlay with gradient - darkened for better text readability */}
       <motion.div 
-        className="absolute inset-0 bg-gradient-to-b from-primary-dark via-primary-dark to-primary bg-opacity-70"
+        className="absolute inset-0 bg-gradient-to-b from-black via-primary-dark to-primary/90"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.7 }}
+        animate={{ opacity: 0.8 }}
         transition={{ duration: 1.5 }}
       ></motion.div>
       
@@ -53,7 +53,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onMenuClick, onPreOrderClick 
             transition={{ duration: 0.8 }}
           >
             <motion.h1 
-              className="font-accent text-6xl md:text-7xl text-accent mb-4"
+              className="font-accent text-6xl md:text-7xl text-white mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ 
@@ -63,11 +63,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onMenuClick, onPreOrderClick 
               }}
             >
               <motion.span 
-                className="inline-block"
+                className="inline-block text-stroke-sm"
                 whileHover={{ 
                   scale: 1.1,
                   color: "#ffffff", 
-                  textShadow: "0 0 8px rgba(255,255,255,0.8)" 
+                  textShadow: "0 0 12px rgba(255,255,255,0.9)" 
                 }}
               >
                 Welcome to VivaVeggie
@@ -75,7 +75,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onMenuClick, onPreOrderClick 
             </motion.h1>
             
             <motion.p 
-              className="text-neutral-light text-xl md:text-2xl mb-10"
+              className="text-white text-xl md:text-2xl mb-10 drop-shadow-[0_2px_3px_rgba(0,0,0,0.8)] font-medium"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ 

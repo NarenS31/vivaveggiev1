@@ -27,6 +27,11 @@ const ProcessSection: React.FC = () => {
 
         {/* Interactive Roadmap */}
         <div className="relative max-w-4xl mx-auto">
+          {/* Central vertical connector line */}
+          <div className="absolute left-1/2 top-10 bottom-20 w-1 bg-gradient-to-b from-green-100 via-green-400 to-green-100 transform -translate-x-1/2 hidden md:block">
+            <div className="absolute inset-0 animate-pulse opacity-50 bg-green-300 blur-sm"></div>
+          </div>
+          
           {processSteps.map((step, index) => {
             const stepNumber = index + 1;
             const isEven = stepNumber % 2 === 0;
@@ -34,7 +39,7 @@ const ProcessSection: React.FC = () => {
             return (
               <motion.div 
                 key={stepNumber}
-                className={`flex flex-col md:flex-row items-center mb-20 ${stepNumber === processSteps.length ? 'mb-0' : ''}`}
+                className={`flex flex-col md:flex-row items-center mb-32 relative ${stepNumber === processSteps.length ? 'mb-0' : ''}`}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}
@@ -43,7 +48,8 @@ const ProcessSection: React.FC = () => {
                   visible: { opacity: 1, transition: { duration: 0.8 } }
                 }}
               >
-                <div className={`w-full md:w-1/2 order-2 ${isEven ? 'md:order-2 md:pl-8' : 'md:order-1 md:pr-8'} mt-6 md:mt-0`}>
+                {/* Text content - for mobile it's always below, for desktop it alternates left/right */}
+                <div className={`w-full md:w-5/12 order-2 ${isEven ? 'md:order-2 md:pl-16' : 'md:order-1 md:pr-16 md:text-right'} mt-6 md:mt-0`}>
                   <AnimatePresence mode="wait">
                     <motion.div 
                       key={`step-${stepNumber}`}
@@ -55,7 +61,7 @@ const ProcessSection: React.FC = () => {
                     >
                       <h3 className="font-heading text-2xl text-primary-dark mb-3">{step.title}</h3>
                       <p className="text-neutral-dark mb-4">{step.description}</p>
-                      <ul className="leaf-bullet space-y-2 text-neutral-dark">
+                      <ul className={`space-y-2 text-neutral-dark ${isEven ? 'leaf-bullet' : 'md:text-right leaf-bullet'}`}>
                         {step.bulletPoints.map((point, i) => (
                           <li key={i}>{point}</li>
                         ))}
@@ -64,30 +70,38 @@ const ProcessSection: React.FC = () => {
                   </AnimatePresence>
                 </div>
                 
-                <div className={`md:w-1/2 order-1 ${isEven ? 'md:order-1' : 'md:order-2'} flex flex-col items-center`}>
+                {/* Center circle - always in center for desktop */}
+                <div className="md:w-2/12 order-1 md:order-2 flex flex-col items-center relative z-10">
                   <motion.div 
-                    className="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4 z-10"
+                    className="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold z-10 shadow-lg relative"
                     initial={{ scale: 0.8, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.2 }}
-                    whileHover={{ scale: 1.1 }}
+                    whileHover={{ scale: 1.1, boxShadow: '0 0 20px rgba(34, 197, 94, 0.4)' }}
                     onClick={() => setActiveStep(stepNumber)}
                   >
-                    {stepNumber}
+                    {/* Outer glowing ring */}
+                    <div className="absolute inset-0 rounded-full bg-primary opacity-30 blur-md animate-ping-slow"></div>
+                    
+                    {/* Inner content */}
+                    <div className="absolute inset-0 rounded-full bg-primary flex items-center justify-center">
+                      {stepNumber}
+                    </div>
                   </motion.div>
-                  
-                  {stepNumber < processSteps.length && (
-                    <div className="roadmap-connector w-4 h-16 mx-auto"></div>
-                  )}
-                  
+                </div>
+                
+                {/* Image - for mobile it's always above, for desktop it alternates right/left */}
+                <div className={`md:w-5/12 order-1 ${isEven ? 'md:order-1' : 'md:order-3'} flex flex-col items-center`}>
                   <motion.div
-                    className="rounded-lg shadow-lg w-full max-w-sm overflow-hidden bg-white"
+                    className="rounded-lg shadow-lg w-full max-w-sm overflow-hidden bg-white relative"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.3 }}
+                    whileHover={{ scale: 1.05 }}
                   >
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
                     <img 
                       src={step.image} 
                       alt={step.imageAlt}
@@ -97,6 +111,9 @@ const ProcessSection: React.FC = () => {
                         e.currentTarget.alt = 'Farm-to-table vegetable display';
                       }}
                     />
+                    <div className="absolute bottom-0 left-0 right-0 p-3 text-white z-20">
+                      <p className="font-bold text-sm">{step.title}</p>
+                    </div>
                   </motion.div>
                 </div>
               </motion.div>

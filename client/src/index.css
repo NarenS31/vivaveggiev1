@@ -128,7 +128,7 @@
   /* Leaf bullet styles */
   .leaf-bullet li {
     position: relative;
-    padding-left: 1.5rem;
+    padding-left: 1.75rem;
     margin-bottom: 0.5rem;
   }
   
@@ -136,7 +136,18 @@
     content: "🌿";
     position: absolute;
     left: 0;
-    top: 0;
+    top: 0.1rem;
     font-size: 0.9rem;
+  }
+  
+  /* Right-aligned leaf bullets */
+  .md\:text-right.leaf-bullet li {
+    padding-left: 0;
+    padding-right: 1.75rem;
+  }
+  
+  .md\:text-right.leaf-bullet li::before {
+    left: auto;
+    right: 0;
   }
 }
