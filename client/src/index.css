@@ -24,114 +24,114 @@
 
   /* Custom colors */
   .text-primary-dark {
-    color: hsl(142, 40%, 30%);
+    color: hsl(130, 65%, 20%);
   }
-
+  
   .text-primary-light {
-    color: hsl(142, 40%, 45%);
+    color: hsl(130, 50%, 45%);
   }
-
+  
   .text-accent-light {
-    color: hsl(36, 90%, 65%);
-    text-shadow: 0 0 3px rgba(0,0,0,0.3);
+    color: hsl(54, 100%, 80%);
+    text-shadow: 0 0 3px rgba(0,0,0,0.5);
   }
-
+  
   .text-accent {
-    color: hsl(36, 90%, 55%);
-    text-shadow: 0 0 4px rgba(0,0,0,0.4);
+    color: hsl(54, 100%, 75%);
+    text-shadow: 0 0 4px rgba(0,0,0,0.6);
   }
-
+  
   .text-secondary {
-    color: hsl(354, 65%, 50%);
+    color: hsl(24, 100%, 60%);
   }
-
+  
   .text-secondary-dark {
-    color: hsl(354, 65%, 40%);
+    color: hsl(24, 100%, 45%);
   }
-
+  
   .text-neutral-light {
     color: hsl(0, 0%, 100%);
-    text-shadow: 0 0 3px rgba(0,0,0,0.2);
+    text-shadow: 0 0 3px rgba(0,0,0,0.3);
   }
-
+  
   .text-neutral-dark {
-    color: hsl(30, 5%, 15%);
+    color: hsl(30, 10%, 15%);
   }
-
+  
   .bg-primary {
-    background-color: hsl(142, 40%, 35%);
+    background-color: hsl(130, 65%, 25%);
   }
-
+  
   .bg-primary-dark {
-    background-color: hsl(142, 40%, 30%);
+    background-color: hsl(130, 65%, 20%);
   }
-
+  
   .bg-primary-light {
-    background-color: hsl(142, 40%, 45%);
+    background-color: hsl(130, 50%, 45%);
   }
-
+  
   .bg-accent {
-    background-color: hsl(36, 90%, 60%);
+    background-color: hsl(54, 100%, 70%);
   }
-
+  
   .bg-secondary {
-    background-color: hsl(354, 65%, 50%);
+    background-color: hsl(24, 100%, 60%);
   }
-
+  
   .bg-secondary-dark {
-    background-color: hsl(354, 65%, 40%);
+    background-color: hsl(24, 100%, 45%);
   }
-
+  
   /* Font classes */
   .font-heading {
     font-family: var(--font-heading);
   }
-
+  
   .font-body {
     font-family: var(--font-body);
   }
-
+  
   .font-accent {
     font-family: var(--font-accent);
   }
-
+  
   /* Roadmap styling */
   .roadmap-connector {
-    background-color: hsl(142, 40%, 35%);
+    background-color: hsl(130, 65%, 25%);
     width: 4px !important;
     height: 80px !important;
     opacity: 0.8;
     margin: 10px auto 20px;
     position: relative;
   }
-
+  
   .roadmap-connector::before,
   .roadmap-connector::after {
     content: '';
     position: absolute;
     width: 12px;
     height: 12px;
-    background-color: hsl(142, 40%, 35%);
+    background-color: hsl(130, 65%, 25%);
     border-radius: 50%;
     left: 50%;
     transform: translateX(-50%);
   }
-
+  
   .roadmap-connector::before {
     top: -6px;
   }
-
+  
   .roadmap-connector::after {
     bottom: -6px;
   }
-
+  
   /* Leaf bullet styles */
   .leaf-bullet li {
     position: relative;
     padding-left: 1.75rem;
     margin-bottom: 0.5rem;
   }
-
+  
   .leaf-bullet li::before {
     content: "🌿";
     position: absolute;
@@ -139,13 +139,13 @@
     top: 0.1rem;
     font-size: 0.9rem;
   }
-
+  
   /* Right-aligned leaf bullets */
   .md\:text-right.leaf-bullet li {
     padding-left: 0;
     padding-right: 1.75rem;
   }
-
+  
   .md\:text-right.leaf-bullet li::before {
     left: auto;
     right: 0;
