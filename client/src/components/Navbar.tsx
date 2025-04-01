@@ -80,7 +80,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
               <motion.a
                 key={index}
                 onClick={item.onClick}
-                className="hover:text-accent-light transition duration-300 cursor-pointer relative group px-4 py-2 text-sm md:text-base" {/* Added text-sm/text-base for responsiveness */}
+                className="hover:text-accent-light transition duration-300 cursor-pointer relative group px-4 py-2 text-sm md:text-base"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}

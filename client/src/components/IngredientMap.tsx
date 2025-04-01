@@ -731,7 +731,7 @@ const IngredientMap: React.FC = () => {
                   transition={{ duration: 0.3 }}
                 >
                   <div className="flex justify-between items-start">
-                    <h3 className="font-heading text-xl text-primary-dark">{selectedFarm.name}</h3>
+                    <<h3 className="font-heading text-xl text-primary-dark">{selectedFarm.name}</h3>
                     <span className="bg-accent text-white text-xs px-2 py1 py-1 rounded-full">
                       {selectedFarm.distance} miles
                     </span>
