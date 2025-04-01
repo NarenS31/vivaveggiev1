@@ -565,12 +565,14 @@ const IngredientMap: React.FC = () => {
           <button 
             onClick={() => setActiveView('map')}
             className={`px-4 py-1.5 text-sm rounded-full transition ${activeView === 'map' ? 'bg-primary text-white' : 'bg-white text-primary'}`}
+            aria-pressed={activeView === 'map'}
           >
             Map View
           </button>
           <button 
             onClick={() => setActiveView('satellite')}
             className={`px-4 py-1.5 text-sm rounded-full transition ${activeView === 'satellite' ? 'bg-primary text-white' : 'bg-white text-primary'}`}
+            aria-pressed={activeView === 'satellite'}
           >
             Satellite View
           </button>
