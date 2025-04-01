@@ -57,12 +57,28 @@ export type MenuItem = z.infer<typeof menuItemSchema>;
 
 // Form schemas
 export const contactFormSchema = z.object({
-  name: z.string().min(1, { message: "Name is required" }),
-  email: z.string().email({ message: "Invalid email format" }),
-  phone: z.string().min(10, { message: "Phone must be at least 10 digits" }),
-  orderType: z.enum(["pickup", "delivery"]),
-  address: z.string().optional(),
-  pickupTime: z.string().min(1, { message: "Time is required" }),
+  name: z.string()
+    .min(2, { message: "Name must be at least 2 characters" })
+    .max(50, { message: "Name must be less than 50 characters" }),
+  email: z.string()
+    .email({ message: "Please enter a valid email address" })
+    .min(5, { message: "Email is too short" })
+    .max(100, { message: "Email is too long" }),
+  phone: z.string()
+    .min(10, { message: "Phone number must be at least 10 digits" })
+    .max(15, { message: "Phone number must be less than 15 digits" })
+    .regex(/^[0-9\+\-\(\)\s]+$/, { message: "Please enter a valid phone number" }),
+  orderType: z.enum(["pickup", "delivery"], { 
+    errorMap: () => ({ message: "Please select a valid order type" }) 
+  }),
+  address: z.string()
+    .min(1, { message: "Address is required for delivery orders" })
+    .optional()
+    .refine((val) => val !== undefined && val.length > 0, { 
+      message: "Address is required for delivery orders" 
+    }),
+  pickupTime: z.string()
+    .min(1, { message: "Please select a pickup/delivery time" }),
   dietaryRestrictions: z.array(z.string()).optional(),
   specialInstructions: z.string().optional(),
 });

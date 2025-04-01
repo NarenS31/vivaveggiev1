@@ -203,7 +203,15 @@ const OrderForm: React.FC<OrderFormProps> = () => {
                         className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-green-500 focus:outline-none"
                         placeholder="Your full name"
                       />
-                      {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message as string}</p>}
+                      {errors.name && (
+                        <motion.p 
+                          initial={{ opacity: 0, y: -5 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          className="text-red-600 text-sm mt-1 font-medium bg-red-50 px-2 py-1 rounded border-l-2 border-red-500"
+                        >
+                          ⚠️ {errors.name.message as string}
+                        </motion.p>
+                      )}
                     </div>
                     
                     <div>
@@ -214,7 +222,15 @@ const OrderForm: React.FC<OrderFormProps> = () => {
                         className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-green-500 focus:outline-none"
                         placeholder="you@example.com"
                       />
-                      {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message as string}</p>}
+                      {errors.email && (
+                        <motion.p 
+                          initial={{ opacity: 0, y: -5 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          className="text-red-600 text-sm mt-1 font-medium bg-red-50 px-2 py-1 rounded border-l-2 border-red-500"
+                        >
+                          ⚠️ {errors.email.message as string}
+                        </motion.p>
+                      )}
                     </div>
                     
                     <div>
@@ -225,7 +241,15 @@ const OrderForm: React.FC<OrderFormProps> = () => {
                         className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-green-500 focus:outline-none"
                         placeholder="Your phone number"
                       />
-                      {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone.message as string}</p>}
+                      {errors.phone && (
+                        <motion.p 
+                          initial={{ opacity: 0, y: -5 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          className="text-red-600 text-sm mt-1 font-medium bg-red-50 px-2 py-1 rounded border-l-2 border-red-500"
+                        >
+                          ⚠️ {errors.phone.message as string}
+                        </motion.p>
+                      )}
                     </div>
                     
                     <div>
@@ -262,7 +286,15 @@ const OrderForm: React.FC<OrderFormProps> = () => {
                           className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-green-500 focus:outline-none"
                           placeholder="Your delivery address"
                         />
-                        {errors.address && <p className="text-red-500 text-xs mt-1">{errors.address.message as string}</p>}
+                        {errors.address && (
+                          <motion.p 
+                            initial={{ opacity: 0, y: -5 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="text-red-600 text-sm mt-1 font-medium bg-red-50 px-2 py-1 rounded border-l-2 border-red-500"
+                          >
+                            ⚠️ {errors.address.message as string}
+                          </motion.p>
+                        )}
                       </div>
                     )}
                     
@@ -275,7 +307,15 @@ const OrderForm: React.FC<OrderFormProps> = () => {
                         {...register("pickupTime")}
                         className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-green-500 focus:outline-none"
                       />
-                      {errors.pickupTime && <p className="text-red-500 text-xs mt-1">{errors.pickupTime.message as string}</p>}
+                      {errors.pickupTime && (
+                        <motion.p 
+                          initial={{ opacity: 0, y: -5 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          className="text-red-600 text-sm mt-1 font-medium bg-red-50 px-2 py-1 rounded border-l-2 border-red-500"
+                        >
+                          ⚠️ {errors.pickupTime.message as string}
+                        </motion.p>
+                      )}
                       
                       {estimatedTime && (
                         <p className="text-sm text-gray-600 mt-2">

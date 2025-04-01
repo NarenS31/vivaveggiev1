@@ -81,15 +81,23 @@ const ProcessSection: React.FC = () => {
                     <div className="roadmap-connector w-4 h-16 mx-auto"></div>
                   )}
                   
-                  <motion.img 
-                    src={step.image} 
-                    alt={step.imageAlt}
-                    className="rounded-lg shadow-lg w-full max-w-sm"
+                  <motion.div
+                    className="rounded-lg shadow-lg w-full max-w-sm overflow-hidden bg-white"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.3 }}
-                  />
+                  >
+                    <img 
+                      src={step.image} 
+                      alt={step.imageAlt}
+                      className="w-full h-64 object-cover"
+                      onError={(e) => {
+                        e.currentTarget.src = 'https://images.unsplash.com/photo-1466637574441-749b8f19452f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80';
+                        e.currentTarget.alt = 'Farm-to-table vegetable display';
+                      }}
+                    />
+                  </motion.div>
                 </div>
               </motion.div>
             );

@@ -33,10 +33,12 @@
   
   .text-accent-light {
     color: hsl(54, 100%, 80%);
+    text-shadow: 0 0 3px rgba(0,0,0,0.5);
   }
   
   .text-accent {
-    color: hsl(54, 100%, 70%);
+    color: hsl(54, 100%, 75%);
+    text-shadow: 0 0 4px rgba(0,0,0,0.6);
   }
   
   .text-secondary {
@@ -48,11 +50,12 @@
   }
   
   .text-neutral-light {
-    color: hsl(30, 20%, 95%);
+    color: hsl(0, 0%, 100%);
+    text-shadow: 0 0 3px rgba(0,0,0,0.3);
   }
   
   .text-neutral-dark {
-    color: hsl(30, 10%, 30%);
+    color: hsl(30, 10%, 15%);
   }
   
   .bg-primary {
@@ -90,5 +93,50 @@
   
   .font-accent {
     font-family: var(--font-accent);
+  }
+  
+  /* Roadmap styling */
+  .roadmap-connector {
+    background-color: hsl(130, 65%, 25%);
+    width: 4px !important;
+    height: 80px !important;
+    opacity: 0.8;
+    margin: 10px auto 20px;
+    position: relative;
+  }
+  
+  .roadmap-connector::before,
+  .roadmap-connector::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: hsl(130, 65%, 25%);
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .roadmap-connector::before {
+    top: -6px;
+  }
+  
+  .roadmap-connector::after {
+    bottom: -6px;
+  }
+  
+  /* Leaf bullet styles */
+  .leaf-bullet li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .leaf-bullet li::before {
+    content: "🌿";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 0.9rem;
   }
 }
