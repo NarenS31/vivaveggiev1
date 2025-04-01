@@ -72,27 +72,30 @@ const ProcessSection: React.FC = () => {
                   </AnimatePresence>
                 </div>
                 
-                {/* Center circle - always in center for desktop */}
-                <div className="md:w-2/12 order-1 md:order-2 flex flex-col items-center relative z-10">
-                  <motion.div 
-                    className="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold z-10 shadow-lg relative"
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    whileHover={{ scale: 1.1, boxShadow: '0 0 20px rgba(34, 197, 94, 0.4)' }}
-                    onClick={() => setActiveStep(stepNumber)}
-                  >
-                    {/* Outer glowing ring */}
-                    <div className="absolute inset-0 rounded-full bg-primary opacity-30 blur-md animate-ping-slow"></div>
-                    
-                    {/* Inner content with better centering for all numbers */}
-                    <div className="absolute inset-0 rounded-full bg-primary flex items-center justify-center">
-                      <span className="relative z-20 flex items-center justify-center w-full h-full text-center" style={{ lineHeight: 1 }}>
-                        {stepNumber}
-                      </span>
-                    </div>
-                  </motion.div>
+                {/* Center circle - always aligned with the central line */}
+                <div className="md:w-2/12 order-1 md:order-2 flex flex-col items-center justify-center relative z-10">
+                  <div className="absolute left-1/2 transform -translate-x-1/2" style={{ top: 0, bottom: 0 }}>
+                    <motion.div 
+                      className="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold z-10 shadow-lg relative"
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      whileInView={{ scale: 1, opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.2 }}
+                      whileHover={{ scale: 1.1, boxShadow: '0 0 20px rgba(34, 197, 94, 0.4)' }}
+                      onClick={() => setActiveStep(stepNumber)}
+                      style={{ position: 'absolute', top: '50%', transform: 'translateY(-50%)' }}
+                    >
+                      {/* Outer glowing ring */}
+                      <div className="absolute inset-0 rounded-full bg-primary opacity-30 blur-md animate-ping-slow"></div>
+                      
+                      {/* Inner content with perfect centering for all numbers */}
+                      <div className="absolute inset-0 rounded-full bg-primary flex items-center justify-center">
+                        <span className="relative z-20 flex items-center justify-center w-full h-full text-center" style={{ lineHeight: 1 }}>
+                          {stepNumber}
+                        </span>
+                      </div>
+                    </motion.div>
+                  </div>
                 </div>
                 
                 {/* Image - for mobile it's always above, for desktop it alternates right/left */}
