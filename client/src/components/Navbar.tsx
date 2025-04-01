@@ -11,7 +11,7 @@ interface NavbarProps {
     team: () => void;
     menu: () => void;
     preorder: () => void;
-    ingredientMap?: () => void; 
+    ingredientMap?: () => void;
     virtualTour?: () => void;
     dynamicMenu?: () => void;
     originStory?: () => void;
@@ -81,7 +81,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
             {menuItems.map((item, index) => (
               <motion.a
                 key={index}
-                onClick={item.onClick}
+                onClick={() => handleNavClick(item.onClick)}
                 className="hover:text-accent-light transition duration-300 cursor-pointer relative group px-4 py-2 text-sm md:text-base"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
