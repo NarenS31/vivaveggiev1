@@ -104,7 +104,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
       </div>
 
       <motion.div
-        className={`bg-sage-green text-neutral-light md:hidden ${mobileMenuOpen ? 'block' : 'hidden'}`} {/* Changed color */}
+        className={`bg-sage-green text-neutral-light md:hidden ${mobileMenuOpen ? 'block' : 'hidden'}`}
         initial={{ height: 0, opacity: 0 }}
         animate={{ height: mobileMenuOpen ? 'auto' : 0, opacity: mobileMenuOpen ? 1 : 0 }}
         transition={{ duration: 0.3 }}
