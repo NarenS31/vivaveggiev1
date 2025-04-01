@@ -69,6 +69,27 @@ const tourPoints: TourPoint[] = [
         y: 20,
         title: 'Energy-Efficient Lighting',
         description: 'Our pendant lights use 75% less energy than traditional restaurant lighting and are designed to mimic the color spectrum of natural sunlight.'
+      },
+      {
+        id: 'art',
+        x: 75,
+        y: 30,
+        title: 'Local Artwork',
+        description: 'Our walls feature rotating exhibitions from local artists, celebrating our community's creativity.'
+      },
+      {
+        id: 'acoustics',
+        x: 85,
+        y: 45,
+        title: 'Sound Design',
+        description: 'Special acoustic panels and living walls help create the perfect ambiance while maintaining comfortable sound levels.'
+      },
+      {
+        id: 'windows',
+        x: 25,
+        y: 35,
+        title: 'Smart Windows',
+        description: 'Our electrochromic windows automatically adjust tint based on sunlight, reducing energy usage while maintaining perfect lighting.'
       }
     ],
     achievements: [

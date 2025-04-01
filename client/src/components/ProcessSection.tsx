@@ -39,7 +39,7 @@ const ProcessSection: React.FC = () => {
             return (
               <motion.div 
                 key={stepNumber}
-                className={`flex flex-col md:flex-row items-center mb-32 relative ${stepNumber === processSteps.length ? 'mb-0' : ''}`}
+                className={`flex flex-col items-center mb-32 relative ${stepNumber === processSteps.length ? 'mb-0' : ''} md:grid md:grid-cols-12 md:gap-8`}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}
@@ -49,7 +49,7 @@ const ProcessSection: React.FC = () => {
                 }}
               >
                 {/* Text content - for mobile it's always below, for desktop it alternates left/right */}
-                <div className={`w-full md:w-5/12 order-2 ${isEven ? 'md:order-2 md:pl-16' : 'md:order-1 md:pr-16 md:text-right'} mt-6 md:mt-0`}>
+                <div className="w-full col-span-3 text-right pr-8 mt-6 md:mt-0">
                   <AnimatePresence mode="wait">
                     <motion.div 
                       key={`step-${stepNumber}`}
