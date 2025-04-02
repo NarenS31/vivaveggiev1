@@ -37,7 +37,7 @@ const Navbar = () => {
             <a href="#origin-story" className="text-white hover:text-neutral-200 transition-colors">
               Our Story
             </a>
-            <a href="#loyalty-program" className="text-white hover:text-neutral-200 transition-colors">
+            <a href="#sustainability-rewards" className="text-white hover:text-neutral-200 transition-colors">
               Rewards
             </a>
           </div>
