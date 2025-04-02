@@ -96,7 +96,7 @@ export const menuItems: MenuItem[] = [
     name: "Golden Milk Latte",
     price: 4.99,
     description: "Turmeric and ginger infused plant milk with a touch of maple syrup",
-    image: "https://images.unsplash.com/photo-1631308491952-050c8b523d47?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1578520046789-f4c4c2623d14?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     tags: ["Vegan", "Anti-inflammatory"],
     category: "drinks"
   },
