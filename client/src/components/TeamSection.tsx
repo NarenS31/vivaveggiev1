@@ -44,7 +44,7 @@ const TeamSection: React.FC = () => {
           >
             Our Chefs
           </motion.h3>
-          
+
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
             variants={staggerContainer}
@@ -65,9 +65,9 @@ const TeamSection: React.FC = () => {
                 <img 
                   src={chef.image} 
                   alt={chef.name} 
-                  className="w-full h-64 object-cover object-center" 
+                  className="w-full h-80 object-cover object-center" 
                 />
-                <div className="p-6">
+                <div className="p-8">
                   <h4 className="font-heading text-xl text-primary-dark mb-2">{chef.name}</h4>
                   <p className="text-secondary font-medium mb-3">{chef.title}</p>
                   <p className="text-neutral-dark text-sm mb-4">{chef.bio}</p>
@@ -89,7 +89,7 @@ const TeamSection: React.FC = () => {
           >
             Our Farmers
           </motion.h3>
-          
+
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
             variants={staggerContainer}
@@ -110,9 +110,9 @@ const TeamSection: React.FC = () => {
                 <img 
                   src={farmer.image} 
                   alt={farmer.name} 
-                  className="w-full h-64 object-cover object-center" 
+                  className="w-full h-80 object-cover object-center" 
                 />
-                <div className="p-6">
+                <div className="p-8">
                   <h4 className="font-heading text-xl text-primary-dark mb-2">{farmer.name}</h4>
                   <p className="text-secondary font-medium mb-3">{farmer.farm}</p>
                   <p className="text-neutral-dark text-sm mb-4">{farmer.description}</p>
