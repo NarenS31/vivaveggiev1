@@ -11,7 +11,7 @@ const ProcessSection: React.FC = () => {
   };
 
   return (
-    <section id="process" className="py-16 md:py-24 bg-primary bg-opacity-5">
+    <section id="process" className="py-16 md:py-24 bg-sage-100">
       <div className="container mx-auto px-4">
         <motion.div 
           className="text-center mb-16"

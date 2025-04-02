@@ -5,6 +5,18 @@ export default {
   content: ["./client/index.html", "./client/src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      colors: {
+        sage: {
+          100: 'hsl(114, 22%, 95%)',
+          200: 'hsl(114, 22%, 90%)',
+          300: 'hsl(114, 22%, 85%)',
+          400: 'hsl(114, 22%, 80%)',
+          500: 'hsl(114, 22%, 75%)',
+          600: 'hsl(114, 22%, 70%)',
+          700: 'hsl(114, 22%, 65%)',
+          800: 'hsl(114, 22%, 60%)',
+          900: 'hsl(114, 22%, 55%)',
+        },
       textShadow: {
         sm: '0 1px 2px var(--tw-shadow-color)',
         DEFAULT: '0 2px 4px var(--tw-shadow-color)',
