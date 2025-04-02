@@ -108,63 +108,72 @@ const Home: React.FC = () => {
           <AboutSection />
         </motion.div>
 
-        <motion.div 
-          ref={processRef}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <ProcessSection />
-        </motion.div>
-
-        <motion.div 
-          ref={teamRef}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <TeamSection />
-        </motion.div>
-
-        <motion.div 
-          ref={menuRef}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <MenuSection />
-        </motion.div>
-
-        <motion.div 
-          ref={preorderRef}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <OrderForm />
-        </motion.div>
-
-        <motion.div className="flex flex-wrap w-full">
-          <div className="w-full">
+        <section className="divide-y divide-gray-200">
+          <motion.div 
+            ref={processRef}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-3xl font-bold text-center mb-8">Our Farm to Table Process</h2>
             <ProcessSection />
-            <TeamSection />
-            <TestimonialsSection />
-          </div>
-        </motion.div>
+          </motion.div>
 
-        <motion.div
-          ref={ingredientMapRef}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <IngredientMap />
-        </motion.div>
+          <motion.div 
+            ref={teamRef}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-3xl font-bold text-center mb-8 pt-12">Meet Our Team</h2>
+            <TeamSection />
+          </motion.div>
+
+          <motion.div 
+            ref={menuRef}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-3xl font-bold text-center mb-8 pt-12">Our Menu</h2>
+            <MenuSection />
+          </motion.div>
+
+          <motion.div 
+            ref={preorderRef}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-3xl font-bold text-center mb-8 pt-12">Pre-Order Your Meal</h2>
+            <OrderForm />
+          </motion.div>
+
+          <motion.div
+            ref={ingredientMapRef}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-3xl font-bold text-center mb-8 pt-12">Local Ingredients Map</h2>
+            <IngredientMap />
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-3xl font-bold text-center mb-8 pt-12">What Our Guests Say</h2>
+            <TestimonialsSection />
+          </motion.div>
+        </section>
 
 
         <motion.div
