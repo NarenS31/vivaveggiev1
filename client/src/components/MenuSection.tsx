@@ -190,7 +190,7 @@ const MenuSection: React.FC = () => {
                     <h3 className="font-heading text-xl text-primary-dark">{item.name}</h3>
                     <span className="font-semibold text-secondary">${item.price.toFixed(2)}</span>
                   </div>
-                  <p className="text-neutral-dark text-sm mb-3">{item.description}</p>
+                  <p className="text-neutral-dark text-sm mb-3 line-clamp-3 overflow-hidden">{item.description}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {item.tags.map((tag, tagIndex) => (
                       <span key={tagIndex} className="bg-primary-light bg-opacity-20 text-primary-dark text-xs px-2 py-1 rounded-full">

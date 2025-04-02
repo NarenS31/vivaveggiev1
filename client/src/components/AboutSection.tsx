@@ -120,7 +120,7 @@ const AboutSection: React.FC = () => {
             {values.map((value, index) => (
               <motion.div 
                 key={index} 
-                className="bg-white p-6 rounded-lg shadow-md text-center"
+                className="bg-white p-6 rounded-lg shadow-md text-center h-[300px] flex flex-col justify-center"
                 variants={itemVariants}
               >
                 <div className="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-4">
