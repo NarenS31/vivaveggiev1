@@ -65,9 +65,9 @@ const TeamSection: React.FC = () => {
                 <img 
                   src={chef.image} 
                   alt={chef.name} 
-                  className="w-full h-96 object-cover object-center" 
+                  className="w-full h-[500px] object-cover object-center" 
                 />
-                <div className="p-10">
+                <div className="p-12">
                   <h4 className="font-heading text-xl text-primary-dark mb-2">{chef.name}</h4>
                   <p className="text-secondary font-medium mb-3">{chef.title}</p>
                   <p className="text-neutral-dark text-sm mb-4">{chef.bio}</p>
