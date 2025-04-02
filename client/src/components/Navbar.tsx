@@ -3,40 +3,35 @@ import { Link } from "wouter";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <div className="container-fluid">
-        <Link href="/" className="navbar-brand">
-          ViveVeggie
-        </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <Link href="/" className="nav-link active" aria-current="page">
-                Home
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link href="/about" className="nav-link">
-                About
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link href="/contact" className="nav-link">
-                Contact
-              </Link>
-            </li>
-          </ul>
+    <nav className="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-wrap items-center justify-between py-3">
+          <Link href="/" className="text-xl font-heading text-primary-dark">
+            ViveVeggie
+          </Link>
+          <div className="flex flex-wrap items-center text-xs space-x-4">
+            <a href="#about" className="text-gray-600 hover:text-primary-dark transition-colors">
+              About
+            </a>
+            <a href="#menu" className="text-gray-600 hover:text-primary-dark transition-colors">
+              Menu
+            </a>
+            <a href="#process" className="text-gray-600 hover:text-primary-dark transition-colors">
+              Our Process
+            </a>
+            <a href="#tour" className="text-gray-600 hover:text-primary-dark transition-colors">
+              Virtual Tour
+            </a>
+            <a href="#team" className="text-gray-600 hover:text-primary-dark transition-colors">
+              Team
+            </a>
+            <a href="#testimonials" className="text-gray-600 hover:text-primary-dark transition-colors">
+              Testimonials
+            </a>
+            <a href="#contact" className="text-gray-600 hover:text-primary-dark transition-colors">
+              Contact
+            </a>
+          </div>
         </div>
       </div>
     </nav>

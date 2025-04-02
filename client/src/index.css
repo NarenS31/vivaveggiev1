@@ -5,6 +5,7 @@
 @layer base {
   * {
     @apply border-border;
+    scroll-margin-top: 5rem;
   }
 
   :root {
