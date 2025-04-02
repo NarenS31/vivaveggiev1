@@ -108,27 +108,15 @@ const Home: React.FC = () => {
           <AboutSection />
         </motion.div>
 
-        <section className="divide-y divide-sage-200">
-          <motion.div 
-            ref={menuRef}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="text-3xl font-bold text-center mb-8 pt-12">Our Menu</h2>
-            <MenuSection />
-          </motion.div>
-
+        <section className="divide-y divide-gray-200">
           <motion.div 
             ref={processRef}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="bg-sage-100"
           >
-            <h2 className="text-3xl font-bold text-center mb-8 pt-12">Our Farm to Table Process</h2>
+            <h2 className="text-3xl font-bold text-center mb-8">Our Farm to Table Process</h2>
             <ProcessSection />
           </motion.div>
 
