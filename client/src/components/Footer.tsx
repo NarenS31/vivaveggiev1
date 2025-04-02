@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-primary-dark text-white pt-16 pb-8">
+    <footer className="bg-[#94A684] text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <motion.div
